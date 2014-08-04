@@ -1,14 +1,25 @@
 #!/usr/bin/bash
-set -o errexit
+#
+# Put customizations to your image in this file.
+
+KUMQUAT_VERSION='0.1.0'
+
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
+# Exit if any commands fail
+set -o errexit
+
+# Configuring image specific packages
 echo "* Configuring image specific packages."
+mkdir -p /var/www/kumquat
 
+# Download and extract kumquat to /var/www
+echo "* Download and extract kumquat to /var/www"
+curl -L "https://github.com/wiedi/kumquat/archive/v${KUMQUAT_VERSION}.tar.gz" | tar xz -C /var/www/kumquat --strip-components=1
 
-echo "* Enable mdata-setup script"
-svccfg import /tmp/mdata-setup.xml
-rm /tmp/mdata-setup.xml
-
+# Setup permissions for kumquat folder
+echo "* Setup permissions for kumquat folder"
+chown -R www:www /var/www/kumquat
 
 echo "* Cleaning up"
 rm -rf /root/*
