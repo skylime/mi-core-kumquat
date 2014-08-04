@@ -46,7 +46,6 @@ rm -r /var/mysql/*
 
 # Copy phpmyadmin example config
 echo "* Copy phpmyadmin example config"
-mkdir /opt/local/etc/httpd/conf.d
 cp /opt/local/share/examples/phpmyadmin/apache.conf /opt/local/etc/httpd/conf.d/80-phpmyadmin.conf
 
 echo "* Cleaning up"
