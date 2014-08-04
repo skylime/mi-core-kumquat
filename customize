@@ -11,15 +11,30 @@ set -o errexit
 
 # Configuring image specific packages
 echo "* Configuring image specific packages."
-mkdir -p /var/www/kumquat
+mkdir -p /opt/kumquat
 
-# Download and extract kumquat to /var/www
-echo "* Download and extract kumquat to /var/www"
-curl -L "https://github.com/wiedi/kumquat/archive/v${KUMQUAT_VERSION}.tar.gz" | tar xz -C /var/www/kumquat --strip-components=1
+# Download and extract kumquat to /opt/kumquat
+echo "* Download and extract kumquat to /opt/kumquat"
+curl -L "https://github.com/wiedi/kumquat/archive/v${KUMQUAT_VERSION}.tar.gz" | tar xz -C /opt/kumquat --strip-components=1
 
 # Setup permissions for kumquat folder
 echo "* Setup permissions for kumquat folder"
-chown -R www:www /var/www/kumquat
+chown -R www:www /opt/kumquat
+
+# Remove unused httpd config files
+echo "* Remove unused httpd config files"
+rm /opt/local/etc/httpd/{\
+	httpd-autoindex.conf,\
+	httpd-dav.conf,\
+	httpd-default.conf,\
+	httpd-info.conf,\
+	httpd-languages.conf,\
+	httpd-manual.conf,\
+	httpd-mpm.conf,\
+	httpd-multilang-errordoc.conf,\
+	httpd-ssl.conf,\
+	httpd-userdir.conf,\
+	httpd-vhosts.conf}
 
 echo "* Cleaning up"
 rm -rf /root/*
