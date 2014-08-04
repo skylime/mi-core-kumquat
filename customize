@@ -23,18 +23,22 @@ chown -R www:www /opt/kumquat
 
 # Remove unused httpd config files
 echo "* Remove unused httpd config files"
-rm /opt/local/etc/httpd/{\
-	httpd-autoindex.conf,\
-	httpd-dav.conf,\
-	httpd-default.conf,\
-	httpd-info.conf,\
-	httpd-languages.conf,\
-	httpd-manual.conf,\
-	httpd-mpm.conf,\
-	httpd-multilang-errordoc.conf,\
-	httpd-ssl.conf,\
-	httpd-userdir.conf,\
-	httpd-vhosts.conf}
+HTTPD_CONF_RM="
+httpd-autoindex.conf
+httpd-dav.conf
+httpd-default.conf
+httpd-info.conf
+httpd-languages.conf
+httpd-manual.conf
+httpd-mpm.conf
+httpd-multilang-errordoc.conf
+httpd-ssl.conf
+httpd-userdir.conf
+httpd-vhosts.conf"
+
+for CONF_RM in ${HTTP_CONF_RM}; do
+	rm /opt/local/etc/httpd/${CONF_RM}
+done
 
 # Remove unused mysql stuff from base
 echo "* Remove unused mysql stuff from base"
