@@ -31,3 +31,8 @@ proftpd
 phpmyadmin
 py27-uwsgi
 py27-pip
+py27-django
+py27-passlib
+py27-pymysql
+py27-OpenSSL
+py27-SSLCrypto

@@ -21,6 +21,17 @@ curl -L "https://github.com/wiedi/kumquat/archive/v${KUMQUAT_VERSION}.tar.gz" | 
 echo "* Setup permissions for kumquat folder"
 chown -R www:www /opt/kumquat
 
+# Install missing dependencies via pip
+echo "* Install missing dependencies via pip"
+pip install django-bootstrap3
+
+# Setup uwsgi and nginx
+echo "* Setup uwsgi and nginx"
+mkdir -p /opt/local/etc/uwsgi
+svccfg import /tmp/uwsgi.xml
+svccfg import /tmp/mdata-setup.xml
+rm /tmp/uwsgi.xml /tmp/mdata-setup.xml
+
 # Remove unused httpd config files
 echo "* Remove unused httpd config files"
 HTTPD_CONF_RM="httpd-autoindex.conf
