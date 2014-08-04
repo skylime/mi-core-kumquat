@@ -29,3 +29,4 @@ percona-server
 apache
 proftpd
 phpmyadmin
+py27-uwsgi
