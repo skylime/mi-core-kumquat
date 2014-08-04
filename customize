@@ -23,8 +23,7 @@ chown -R www:www /opt/kumquat
 
 # Remove unused httpd config files
 echo "* Remove unused httpd config files"
-HTTPD_CONF_RM="
-httpd-autoindex.conf
+HTTPD_CONF_RM="httpd-autoindex.conf
 httpd-dav.conf
 httpd-default.conf
 httpd-info.conf
