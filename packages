@@ -30,3 +30,4 @@ apache
 proftpd
 phpmyadmin
 py27-uwsgi
+py27-pip
