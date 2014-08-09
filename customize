@@ -44,7 +44,7 @@ httpd-ssl.conf
 httpd-userdir.conf
 httpd-vhosts.conf"
 
-for CONF_RM in ${HTTP_CONF_RM}; do
+for CONF_RM in "${HTTP_CONF_RM}"; do
 	rm /opt/local/etc/httpd/${CONF_RM}
 done
 
@@ -55,6 +55,10 @@ rm -r /var/mysql/*
 # Copy phpmyadmin example config
 echo "* Copy phpmyadmin example config"
 cp /opt/local/share/examples/phpmyadmin/apache.conf /opt/local/etc/httpd/conf.d/80-phpmyadmin.conf
+
+# Create ssl folder for httpd
+echo "* Create ssl folder for httpd"
+mkdir /opt/local/etc/httpd/ssl
 
 echo "* Cleaning up"
 rm -rf /root/*
