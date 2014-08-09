@@ -14,5 +14,5 @@ else
 	openssl req -newkey rsa:2048 -keyout ${cert_dir}/kumquat.key \
 	            -out ${cert_dir}/kumquat.csr -nodes \
 	            -subj "/C=DE/L=Raindbow City/O=Aperture Science/OU=Please use valid ssl certificate/CN=${host}"
-	openssl x509 -in ${cert_dir}/kumquat.csr -out ${cert_dir}/kumquat.crt -req -signkey test.key -days 128
+	openssl x509 -in ${cert_dir}/kumquat.csr -out ${cert_dir}/kumquat.crt -req -signkey kumquat.key -days 128
 fi
