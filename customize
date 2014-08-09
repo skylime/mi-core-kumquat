@@ -60,6 +60,11 @@ cp /opt/local/share/examples/phpmyadmin/apache.conf /opt/local/etc/httpd/conf.d/
 echo "* Create ssl folder for httpd"
 mkdir /opt/local/etc/httpd/ssl
 
+# Copy default index.html
+echo "* Copy default index.html"
+cp /tmp/default-index.html /opt/local/share/httpd/htdocs/
+rm /tmp/default-index.html
+
 echo "* Cleaning up"
 rm -rf /root/*
 sm-prepare-image -y

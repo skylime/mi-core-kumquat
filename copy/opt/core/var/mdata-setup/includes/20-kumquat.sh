@@ -5,7 +5,7 @@ host=$(mdata-get sdc:hostname)
 cert_dir='/opt/local/etc/httpd/ssl/'
 
 # Setup hostname for kumquat config
-sed -i "s:HOSTNAME:${host}:g" /opt/local/etc/httpd/01-kumquat.conf
+sed -i "s:HOSTNAME:${host}:g" /opt/local/etc/httpd/vhosts/01-kumquat.conf
 
 # SSL configuration
 if mdata-get kumquat_ssl 1>/dev/null 2>&1; then
