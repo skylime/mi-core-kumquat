@@ -13,7 +13,7 @@
 			<service_fmri value="svc:/system/filesystem/local"/>
 		</dependency>
 
-		<exec_method type="method" name="start" exec="/opt/local/bin/uwsgi-3.3 --emperor /opt/local/etc/uwsgi/" timeout_seconds="60"/>
+		<exec_method type="method" name="start" exec="/opt/local/bin/uwsgi-2.7 --emperor /opt/local/etc/uwsgi/" timeout_seconds="60"/>
 		<exec_method type="method" name="stop"	exec=":kill" timeout_seconds="60"/>
 
 		<property_group name="startd" type="framework">
