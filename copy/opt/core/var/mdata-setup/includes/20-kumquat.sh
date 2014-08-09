@@ -15,4 +15,5 @@ else
 	            -out ${cert_dir}kumquat.csr -nodes \
 	            -subj "/C=DE/L=Raindbow City/O=Aperture Science/OU=Please use valid ssl certificate/CN=${host}"
 	openssl x509 -in ${cert_dir}kumquat.csr -out ${cert_dir}kumquat.crt -req -signkey ${cert_dir}kumquat.key -days 128
+	cat ${cert_dir}kumquat.crt ${cert_dir}kumquat.key > ${cert_dir}kumquat.pem
 fi
