@@ -26,6 +26,7 @@ php55-curl
 php55-bz2
 php55-bcmath
 percona-server
+quickbackup-percona
 apache
 proftpd
 phpmyadmin
