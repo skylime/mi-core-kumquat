@@ -3,6 +3,10 @@ log "getting mysql_pw"
 MYSQL_PW=${MYSQL_PW:-$(mdata-get mysql_pw 2>/dev/null)} || \
 MYSQL_PW=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
 
+# Be sure the generated MYSQL_PW password set also as mdata
+# information.
+mdata-put mysql_pw "${MYSQL_PW}"
+
 # Generate svccfg happy password for quickbackup-percona
 # (one without special characters)
 log "getting qb_pw"
