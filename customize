@@ -51,7 +51,7 @@ done
 # Create ugly mysql-client symlink and install py27-mysqldb
 echo "* Create ugly mysql-client symlink and install py27-mysqldb"
 ln -sv /opt/local/lib/libperconaserverclient.so.18 /opt/local/lib/libmysqlclient.so.18
-pkg_add -fL http://pkgsrc.smartos.skylime.net/packages/SmartOS/2014Q2/x86_64/All/py27-mysqldb-1.2.5.tgz
+#pkg_add -fL http://pkgsrc.smartos.skylime.net/packages/SmartOS/2014Q2/x86_64/All/py27-mysqldb-1.2.5.tgz
 
 # Remove unused mysql stuff from base
 echo "* Remove unused mysql stuff from base"
