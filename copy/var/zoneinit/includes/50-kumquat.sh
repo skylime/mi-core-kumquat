@@ -7,6 +7,7 @@ MYSQL_ROOT=$(mdata-get mysql_pw)
 MYSQL_KUMQUAT=${MYSQL_KUMQUAT:-$(mdata-get mysql_kumquat_pw 2>/dev/null)} || \
 MYSQL_KUMQUAT=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
 mdata-put mysql_kumquat_pw "${MYSQL_KUMQUAT}"
+SECRET_KEY=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-100})
 
 # check if database exists already
 if [ -d /var/mysql/kumquat ]; then
@@ -35,6 +36,9 @@ else
 fi
 
 cat >> /opt/kumquat/kumquat_web/settings.py <<EOF
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = "${SECRET_KEY}"
+
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {

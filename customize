@@ -67,8 +67,12 @@ mkdir /opt/local/etc/httpd/ssl
 
 # Copy default index.html
 echo "* Copy default index.html"
-cp /tmp/default-index.html /opt/local/share/httpd/htdocs/
+cp /tmp/default-index.html /opt/local/share/httpd/htdocs/index.html
 rm /tmp/default-index.html
+
+# Copy default (basic) kumquat settings
+cp /tmp/kumquat-settings.py /opt/kumquat/kumquat_web/settings.py
+rm /tmp/kumquat-settings.py
 
 echo "* Cleaning up"
 rm -rf /root/*
