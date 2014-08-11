@@ -80,5 +80,5 @@ EOF
 /opt/kumquat/manage.py syncdb --noinput
 
 # Create superadmin user
-echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', admin@example.com', '${ADMIN_KUMQUAT}')" \
+echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', '${ADMIN_KUMQUAT}')" \
 	| /opt/kumquat/manage.py shell
