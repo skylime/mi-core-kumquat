@@ -4,25 +4,20 @@
 UUID=$(mdata-get sdc:uuid)
 DDS=zones/${UUID}/data
 MYSQL_ROOT=$(mdata-get mysql_pw)
-MYSQL_KUMQUAT=
+MYSQL_KUMQUAT=${MYSQL_KUMQUAT:-$(mdata-get mysql_kumquat_pw 2>/dev/null)} || \
+MYSQL_KUMQUAT=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
+mdata-put mysql_kumquat_pw "${MYSQL_KUMQUAT}"
 
-# create kumquat mysql database
-echo "CREATE DATABASE IF NOT EXISTS kumquat" |\
-	mysql --user=root --password=${MYSQL_ROOT}
+# create kumquat mysql database, user and privileges
+KUMQUAT_INIT="CREATE DATABASE IF NOT EXISTS kumquat;
+CREATE USER 'kumquat'@'localhost' IDENTIFIED BY '${MYSQL_KUMQUAT}';
+CREATE USER 'kumquat'@'127.0.0.1' IDENTIFIED BY '${MYSQL_KUMQUAT}';
+GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'localhost';
+GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'127.0.0.1';
+FLUSH PRIVILEGES;"
 
-# create kumquat mysql user
-echo "CREATE USER 'kumquat'@'localhost' IDENTIFIED BY '${MYSQL_KUMQUAT}';
-	CREATE USER 'kumquat'@'127.0.0.1' IDENTIFIED BY '${MYSQL_KUMQUAT}';'" |\
-	mysql --user=root --password=${MYSQL_ROOT}
-
-# grand privileges
-echo "GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'localhost';
-	GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'127.0.0.1';" |\
-	mysql --user=root --password=${MYSQL_ROOT}
-
-# flush privs
-echo "FLUSH PRIVILEGES;" |\
-	mysql --user=root --password=${MYSQL_ROOT}
+mysql --user=root --password=${MYSQL_ROOT} -e "${KUMQUAT_INIT}" >/dev/null || \
+  ( log "ERROR MySQL query failed to execute." && exit 31 )
 
 # copy generated settings
 if zfs list ${DDS} 1>/dev/null 2>&1; then
