@@ -34,8 +34,6 @@ phpmyadmin
 py27-gunicorn
 py27-pip
 py27-passlib
-py27-pymysql
 py27-OpenSSL
 py27-SSLCrypto
 py27-expat
-py27-mysqldb
