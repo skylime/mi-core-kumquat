@@ -23,7 +23,7 @@ chown -R www:www /opt/kumquat
 
 # Install missing dependencies via pip
 echo "* Install missing dependencies via pip"
-pip install django-bootstrap3
+pip install django django-bootstrap3
 
 # Setup uwsgi and nginx
 echo "* Setup uwsgi and nginx"

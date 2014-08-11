@@ -25,6 +25,7 @@ php55-exif
 php55-curl
 php55-bz2
 php55-bcmath
+percona
 percona-server
 quickbackup-percona
 apache
@@ -32,9 +33,9 @@ proftpd
 phpmyadmin
 py27-uwsgi
 py27-pip
-py27-django
 py27-passlib
 py27-pymysql
 py27-OpenSSL
 py27-SSLCrypto
 py27-expat
+py27-mysqldb
