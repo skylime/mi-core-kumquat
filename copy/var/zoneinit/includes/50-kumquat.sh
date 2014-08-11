@@ -8,6 +8,12 @@ MYSQL_KUMQUAT=${MYSQL_KUMQUAT:-$(mdata-get mysql_kumquat_pw 2>/dev/null)} || \
 MYSQL_KUMQUAT=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
 mdata-put mysql_kumquat_pw "${MYSQL_KUMQUAT}"
 
+# check if database exists already
+if [ -d /var/mysql/kumquat ]; then
+	echo 'Database already exists, maybe some migration script will run in the future.'
+	exit 0
+fi
+
 # create kumquat mysql database, user and privileges
 KUMQUAT_INIT="CREATE DATABASE IF NOT EXISTS kumquat;
 CREATE USER 'kumquat'@'localhost' IDENTIFIED BY '${MYSQL_KUMQUAT}';
@@ -51,8 +57,8 @@ DATABASES = {
 KUMQUAT_CERT_PATH        = '/opt/local/etc/httpd/ssl/'
 KUMQUAT_VHOST_CONFIG     = '/opt/local/etc/httpd/vhosts/vhosts.conf'
 KUMQUAT_VHOST_ROOT       = '/var/www/'
-KUMQUAT_VHOST_UID        = www
-KUMQUAT_VHOST_GID        = www
+KUMQUAT_VHOST_UID        = 'www'
+KUMQUAT_VHOST_GID        = 'www'
 KUMQUAT_USE_ZFS          = ${USE_ZFS}
 KUMQUAT_VHOST_DATASET    = "${VHOST_DATASET}"
 KUMQUAT_WEBSERVER_RELOAD = 'svcadm refresh apache'
