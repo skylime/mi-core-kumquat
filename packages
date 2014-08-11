@@ -31,7 +31,7 @@ quickbackup-percona
 apache
 proftpd
 phpmyadmin
-py27-uwsgi
+py27-gunicorn
 py27-pip
 py27-passlib
 py27-pymysql

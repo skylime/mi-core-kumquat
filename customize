@@ -25,10 +25,10 @@ chown -R www:www /opt/kumquat
 echo "* Install missing dependencies via pip"
 pip install django django-bootstrap3
 
-# Setup uwsgi and nginx
-echo "* Setup uwsgi and nginx"
-mkdir -p /opt/local/etc/uwsgi
-svccfg import /tmp/uwsgi.xml
+# Setup gunicorn
+echo "* Setup gunicorn"
+mkdir -p /opt/local/etc/gunicorn
+svccfg import /tmp/gunicorn.xml
 
 # Remove unused httpd config files
 echo "* Remove unused httpd config files"
