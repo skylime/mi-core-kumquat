@@ -82,7 +82,7 @@ KUMQUAT_VHOST_GID        = ${WWW_GID}
 KUMQUAT_USE_ZFS          = ${USE_ZFS}
 KUMQUAT_VHOST_DATASET    = "${VHOST_DATASET}"
 KUMQUAT_WEBSERVER_RELOAD = 'svcadm refresh apache'
-CORE_MAIL_TOKEN          = ${CORE_MAIL_TOKEN}
+CORE_MAIL_TOKEN          = "${CORE_MAIL_TOKEN}"
 EOF
 
 # Init django data and create admin user
