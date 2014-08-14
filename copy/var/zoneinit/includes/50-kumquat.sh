@@ -14,6 +14,9 @@ SECRET_KEY=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-100})
 ADMIN_KUMQUAT=${ADMIN_KUMQUAT:-$(mdata-get kumquat_admin 2>/dev/null)} || \
 ADMIN_KUMQUAT=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
 
+WWW_UID=$(id -u www)
+WWW_GID=$(id -g www)
+
 # check if database exists already
 if [ -d /var/mysql/kumquat ]; then
 	echo 'Database already exists, maybe some migration script will run in the future.'
@@ -69,8 +72,8 @@ DATABASES = {
 KUMQUAT_CERT_PATH        = '/opt/local/etc/httpd/ssl/'
 KUMQUAT_VHOST_CONFIG     = '/opt/local/etc/httpd/vhosts/vhosts.conf'
 KUMQUAT_VHOST_ROOT       = '/var/www/'
-KUMQUAT_VHOST_UID        = 'www'
-KUMQUAT_VHOST_GID        = 'www'
+KUMQUAT_VHOST_UID        = ${WWW_UID}
+KUMQUAT_VHOST_GID        = ${WWW_GID}
 KUMQUAT_USE_ZFS          = ${USE_ZFS}
 KUMQUAT_VHOST_DATASET    = "${VHOST_DATASET}"
 KUMQUAT_WEBSERVER_RELOAD = 'svcadm refresh apache'
