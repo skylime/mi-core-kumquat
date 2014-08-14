@@ -29,7 +29,6 @@ percona-server
 percona-client
 quickbackup-percona
 apache
-proftpd
 phpmyadmin
 py27-gunicorn
 py27-pip
