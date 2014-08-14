@@ -86,3 +86,8 @@ EOF
 # Create superadmin user
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', '${ADMIN_KUMQUAT}')" \
 	| /opt/kumquat/manage.py shell
+
+# Create cronjobs for kumquat
+CRON="0,5,10,15,20,25,30,35,40,45,50,55 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
+0,15,30,45 * * * * (cd /opt/kumquat/; ./manage.py delete_vhosts)"
+(crontab -l 2>/dev/null || true; echo "$CRON" ) | sort | uniq | crontab
