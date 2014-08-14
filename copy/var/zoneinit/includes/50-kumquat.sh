@@ -18,6 +18,10 @@ mdata-put kumquat_admin ${ADMIN_KUMQUAT}
 WWW_UID=$(id -u www)
 WWW_GID=$(id -g www)
 
+CORE_MAIL_TOKEN=${CORE_MAIL_TOKEN:-$(mdata-get core_mail_token 2>/dev/null)} || \
+CORE_MAIL_TOKEN=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
+mdata-put core_mail_token ${CORE_MAIL_TOKEN}
+
 # check if database exists already
 if [ -d /var/mysql/kumquat ]; then
 	echo 'Database already exists, maybe some migration script will run in the future.'
@@ -78,6 +82,7 @@ KUMQUAT_VHOST_GID        = ${WWW_GID}
 KUMQUAT_USE_ZFS          = ${USE_ZFS}
 KUMQUAT_VHOST_DATASET    = "${VHOST_DATASET}"
 KUMQUAT_WEBSERVER_RELOAD = 'svcadm refresh apache'
+CORE_MAIL_TOKEN          = ${CORE_MAIL_TOKEN}
 EOF
 
 # Init django data and create admin user
