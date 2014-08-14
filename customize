@@ -75,8 +75,14 @@ cp /tmp/default-index.html /opt/local/share/httpd/htdocs/index.html
 rm /tmp/default-index.html
 
 # Copy default (basic) kumquat settings
+echo "* Copy default (basic) kumquat settings"
 cp /tmp/kumquat-settings.py /opt/kumquat/kumquat_web/settings.py
 rm /tmp/kumquat-settings.py
+
+# Copy default proftpd configuration
+echo "* Copy default proftpd configuration"
+cp /tmp/proftpd.conf /opt/local/etc/proftpd.conf
+rm /tmp/proftpd.conf
 
 echo "* Cleaning up"
 rm -rf /root/*
