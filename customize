@@ -61,10 +61,6 @@ pkg_add -fL http://pkgsrc.smartos.skylime.net/skylime-extra/2014Q2/x86_64/proftp
 echo "* Remove unused mysql stuff from base"
 rm -r /var/mysql/*
 
-# Copy phpmyadmin example config
-echo "* Copy phpmyadmin example config"
-cp /opt/local/share/examples/phpmyadmin/apache.conf /opt/local/etc/httpd/conf.d/80-phpmyadmin.conf
-
 # Create ssl folder for httpd
 echo "* Create ssl folder for httpd"
 mkdir /opt/local/etc/httpd/ssl
