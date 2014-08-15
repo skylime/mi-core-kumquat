@@ -65,6 +65,10 @@ rm -r /var/mysql/*
 echo "* Create ssl folder for httpd"
 mkdir /opt/local/etc/httpd/ssl
 
+# Remove phpMyAdmin setup folder
+echo "* Remove phpMyAdmin setup folder"
+rm -rf /opt/local/share/phpmyadmin/setup
+
 # Copy default index.html
 echo "* Copy default index.html"
 cp /tmp/default-index.html /opt/local/share/httpd/htdocs/index.html
