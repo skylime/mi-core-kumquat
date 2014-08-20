@@ -61,13 +61,13 @@ DATABASES = {
         'default': {
                 'ENGINE':   'django.db.backends.mysql',
                 'NAME':     'kumquat',
-                'HOST':     '127.0.0.1',
+                'HOST':     'localhost',
                 'USER':     'kumquat',
                 'PASSWORD': "${MYSQL_KUMQUAT}",
         },
         'kumquat_mysql': {
                 'ENGINE':   'django.db.backends.mysql',
-                'HOST':     '127.0.0.1',
+                'HOST':     'localhost',
                 'USER':     'root',
                 'PASSWORD': "${MYSQL_ROOT}",
         }
