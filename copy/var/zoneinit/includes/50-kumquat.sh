@@ -92,6 +92,9 @@ if [[ ${DB_CREATED} == true ]]; then
 		| /opt/kumquat/manage.py shell
 fi
 
+# Run update_vhosts once
+(cd /opt/kumquat/; ./manage.py update_vhosts)
+
 # Create cronjobs for kumquat
 CRON="0,5,10,15,20,25,30,35,40,45,50,55 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
 0,15,30,45 * * * * (cd /opt/kumquat/; ./manage.py delete_vhosts)"
