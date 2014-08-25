@@ -25,7 +25,7 @@ FLUSH PRIVILEGES;
 install plugin sphinx soname 'ha_sphinx.so';"
 
 # MySQL my.cnf tuning
-MEMCAP=$(kstat -c zone_memory_cap -s physcap -p | cut -f2 | awk '{ printf "%d", $1/1024/1024 }');
+MEMCAP=$(kstat -c zone_memory_cap -s physcap -p | cut -f2 | awk '{ printf "%d", $1/1024/1024/2 }');
 
 # innodb_buffer_pool_size
 INNODB_BUFFER_POOL_SIZE=$(echo -e "scale=0; ${MEMCAP}/2"|bc)M
