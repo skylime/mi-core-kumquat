@@ -92,6 +92,9 @@ sleep 1
 [[ "$(svcs -Ho state percona)" == "online" ]] || \
   ( log "ERROR MySQL SMF not reporting as 'online'" && exit 31 )
 
-log "running the access lockdown SQL query"
-mysql -u root -e "${MYSQL_INIT}" >/dev/null || \
-  ( log "ERROR MySQL query failed to execute." && exit 31 )
+# If you can login without a password you could create a valid user
+if mysqladmin -u root processlist &>/dev/null; then
+	log "running the access lockdown SQL query"
+	mysql -u root -e "${MYSQL_INIT}" >/dev/null || \
+	  ( log "ERROR MySQL query failed to execute." && exit 31 )
+fi
