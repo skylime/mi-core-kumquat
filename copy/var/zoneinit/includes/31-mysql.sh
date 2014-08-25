@@ -14,7 +14,7 @@ QB_PW=$(od -An -N8 -x /dev/random | head -1 | sed 's/^[ \t]*//' | tr -d ' ');
 QB_US=qb-$(zonename | awk -F\- '{ print $5 }');
 
 # Default query to lock down access and clean up
-MYSQL_INIT="DELETE from mysql.user;
+MYSQL_INIT="DELETE from mysql.user WHERE User = 'root';
 DELETE FROM mysql.proxies_priv WHERE Host='base.joyent.us';
 GRANT ALL on *.* to 'root'@'localhost' identified by '${MYSQL_PW}' with grant option;
 GRANT ALL on *.* to 'root'@'${PRIVATE_IP:-${PUBLIC_IP}}' identified by '${MYSQL_PW}' with grant option;
