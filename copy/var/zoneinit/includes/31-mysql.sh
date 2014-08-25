@@ -52,11 +52,11 @@ THREAD_CACHE_SIZE=$((${MAX_CONNECTIONS}/2))
 
 log "tuning MySQL configuration"
 gsed -i \
-	-e "s/back_log = 64/back_log = ${BACK_LOG}/" \
-	-e "s/table_open_cache = 512/table_open_cache = ${TABLE_CACHE}/" \
-	-e "s/thread_cache_size = 1000/thread_cache_size = ${THREAD_CACHE_SIZE}/" \
-	-e "s/max_connections = 1000/max_connections = ${MAX_CONNECTIONS}/" \
-	-e "s/innodb_buffer_pool_size = 16M/innodb_buffer_pool_size = ${INNODB_BUFFER_POOL_SIZE}/" \
+	-e "s/back_log = [0-9]*/back_log = ${BACK_LOG}/" \
+	-e "s/table_open_cache = [0-9]*/table_open_cache = ${TABLE_CACHE}/" \
+	-e "s/thread_cache_size = [0-9]*/thread_cache_size = ${THREAD_CACHE_SIZE}/" \
+	-e "s/max_connections = [0-9]*/max_connections = ${MAX_CONNECTIONS}/" \
+	-e "s/innodb_buffer_pool_size = [0-9]*M/innodb_buffer_pool_size = ${INNODB_BUFFER_POOL_SIZE}/" \
 	/opt/local/etc/my.cnf
 
 log "configuring Quickbackup"
