@@ -52,7 +52,6 @@ THREAD_CACHE_SIZE=$((${MAX_CONNECTIONS}/2))
 
 log "tuning MySQL configuration"
 gsed -i \
-	-e "s/bind-address = 127.0.0.1/bind-address = ${PRIVATE_IP:-${PUBLIC_IP}}/" \
 	-e "s/back_log = 64/back_log = ${BACK_LOG}/" \
 	-e "s/table_open_cache = 512/table_open_cache = ${TABLE_CACHE}/" \
 	-e "s/thread_cache_size = 1000/thread_cache_size = ${THREAD_CACHE_SIZE}/" \
