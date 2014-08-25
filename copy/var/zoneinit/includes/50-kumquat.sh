@@ -22,22 +22,20 @@ CORE_MAIL_TOKEN=${CORE_MAIL_TOKEN:-$(mdata-get core_mail_token 2>/dev/null)} || 
 CORE_MAIL_TOKEN=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
 mdata-put core_mail_token ${CORE_MAIL_TOKEN}
 
-# check if database exists already
-if [ -d /var/mysql/kumquat ]; then
-	echo 'Database already exists, maybe some migration script will run in the future.'
-	exit 0
+# check if database not exists
+if [[ ! -d /var/mysql/kumquat ]]; then
+	# create kumquat mysql database, user and privileges
+	KUMQUAT_INIT="CREATE DATABASE IF NOT EXISTS kumquat;
+	CREATE USER 'kumquat'@'localhost' IDENTIFIED BY '${MYSQL_KUMQUAT}';
+	CREATE USER 'kumquat'@'127.0.0.1' IDENTIFIED BY '${MYSQL_KUMQUAT}';
+	GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'localhost';
+	GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'127.0.0.1';
+	FLUSH PRIVILEGES;"
+	
+	mysql --user=root --password=${MYSQL_ROOT} -e "${KUMQUAT_INIT}" >/dev/null || \
+	  ( log "ERROR MySQL query failed to execute." && exit 31 )
+	DB_CREATED=true
 fi
-
-# create kumquat mysql database, user and privileges
-KUMQUAT_INIT="CREATE DATABASE IF NOT EXISTS kumquat;
-CREATE USER 'kumquat'@'localhost' IDENTIFIED BY '${MYSQL_KUMQUAT}';
-CREATE USER 'kumquat'@'127.0.0.1' IDENTIFIED BY '${MYSQL_KUMQUAT}';
-GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'localhost';
-GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'127.0.0.1';
-FLUSH PRIVILEGES;"
-
-mysql --user=root --password=${MYSQL_ROOT} -e "${KUMQUAT_INIT}" >/dev/null || \
-  ( log "ERROR MySQL query failed to execute." && exit 31 )
 
 # copy generated settings
 if zfs list ${DDS} 1>/dev/null 2>&1; then
@@ -89,8 +87,10 @@ EOF
 /opt/kumquat/manage.py syncdb --noinput
 
 # Create superadmin user
-echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', '${ADMIN_KUMQUAT}')" \
-	| /opt/kumquat/manage.py shell
+if [[ ${DB_CREATED} == true ]]; then
+	echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', '${ADMIN_KUMQUAT}')" \
+		| /opt/kumquat/manage.py shell
+fi
 
 # Create cronjobs for kumquat
 CRON="0,5,10,15,20,25,30,35,40,45,50,55 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
