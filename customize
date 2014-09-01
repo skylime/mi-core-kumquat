@@ -23,7 +23,7 @@ chown -R www:www /opt/kumquat
 
 # Install missing dependencies via pip
 echo "* Install missing dependencies via pip"
-pip install django django-bootstrap3
+pip install django django-bootstrap3 django-messagegroups
 
 # Setup gunicorn
 echo "* Setup gunicorn"
