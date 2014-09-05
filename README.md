@@ -1,15 +1,12 @@
 # mi-core-kumquat
 
-Please refer to https://github.com/joyent/mibe for use of this repo.
+This repository is based on [Joyent mibe](https://github.com/joyent/mibe). Please note this repository should be build with the [mi-core-base](https://github.com/skylime/mi-core-base) mibe image.
 
 ## description
 
 This is a standalone webservice / webhosting template. It provides you with
 [kumquat](https://github.com/wiedi/kumquat), an awesome minimal web interface to
 manage domains, vhosts, mysql and ftp accounts.
-
-Please note that it requires
-[mi-core-base](https://github.com/skylime/mi-core-base).
 
 It install php-fpm with apache, proftpd and for kumquat gunicorn. Percona is
 installed for a local mysql server.
