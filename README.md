@@ -21,6 +21,7 @@ provision state. We recommend a valid `kumquat_ssl` certificate.
 - `core_mail_token`: mail export token from kumquat
 - `mysql_pw`: mysql root password
 - `mysql_kumquat_pw`: kumquat mysql password
+- `phpmyadmin_allow`: limit phpMyAdmin access by ip or host (default is allow all)
 
 ## services
 
