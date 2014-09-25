@@ -1,7 +1,11 @@
 ## Change Log
 
-### 14.2.1 (2014/09/25 19:39 +00:00)
+### 14.2.2 (2014/09/25 20:01 +00:00)
+- [2bfd1de](https://github.com/skylime/mi-core-kumquat/commit/2bfd1deb3207896a80a7d34f78f87e4a11ece358) less memory for mysql (@drscream)
+- [552e34f](https://github.com/skylime/mi-core-kumquat/commit/552e34f4cffdcaece2a119a67e5f538bc0b239dc) php values for upload (@drscream)
+- [6c99c88](https://github.com/skylime/mi-core-kumquat/commit/6c99c882ef4c7c46bb220771b7e08ae0dcc5bdb3) version update (@drscream)
 
+### 14.2.1 (2014/09/25 19:40 +00:00)
 - [d9e0ac1](https://github.com/skylime/mi-core-kumquat/commit/d9e0ac15a037f7336e19687e2e050fdf4584fd68) Add default files that are required to build mibe (@drscream)
 - [b968a8e](https://github.com/skylime/mi-core-kumquat/commit/b968a8e5987707a312e49489e5b8701c02cacfe8) add default customize tasks (@drscream)
 - [775d360](https://github.com/skylime/mi-core-kumquat/commit/775d360fc3d11e733e9cf923eb3171894d3951e0) add default php extenstions and setup timezone (@drscream)
@@ -113,3 +117,4 @@
 - [5e7447b](https://github.com/skylime/mi-core-kumquat/commit/5e7447b8fa53bdd0960e80f66d41afc15ef93c4a) import sys is missing (@drscream)
 - [41674fa](https://github.com/skylime/mi-core-kumquat/commit/41674fa270be10aa5599daac0a6cc4bcc707f9c3) remove logfile handler (@drscream)
 - [3e3f0ee](https://github.com/skylime/mi-core-kumquat/commit/3e3f0ee5c80002036af662f869ac0507cd8193fa) update to new core-base image: a6fb1ff0-4333-11e4-a0e1-370c81688134 (@drscream)
+- [125d6d1](https://github.com/skylime/mi-core-kumquat/commit/125d6d13d91f94e0c989024cc559f8a47ddbd024) add Changelog (@drscream)
