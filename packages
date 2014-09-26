@@ -25,6 +25,7 @@ php55-exif
 php55-curl
 php55-bz2
 php55-bcmath
+php55-dom
 percona-server
 percona-client
 quickbackup-percona
