@@ -1,9 +1,16 @@
 ## Change Log
 
+### 14.2.3 (2014/09/26 16:26 +00:00)
+- [ada08e4](https://github.com/skylime/mi-core-kumquat/commit/ada08e4b7fa994e170820ee239f320547959e56e) update to new kumquat version (@drscream)
+- [7bce8ff](https://github.com/skylime/mi-core-kumquat/commit/7bce8ff0f93b26bf98dd7dace7eed47830d4c02e) add php dom (@drscream)
+- [cb69137](https://github.com/skylime/mi-core-kumquat/commit/cb691373a6e6285bae86dfab7b95656716b724ea) allow static files (@drscream)
+- [d242d7d](https://github.com/skylime/mi-core-kumquat/commit/d242d7d1f7d201c40f8232ee7c1fe68a225aa8dc) update kumquat version (@drscream)
+
 ### 14.2.2 (2014/09/25 20:01 +00:00)
 - [2bfd1de](https://github.com/skylime/mi-core-kumquat/commit/2bfd1deb3207896a80a7d34f78f87e4a11ece358) less memory for mysql (@drscream)
 - [552e34f](https://github.com/skylime/mi-core-kumquat/commit/552e34f4cffdcaece2a119a67e5f538bc0b239dc) php values for upload (@drscream)
 - [6c99c88](https://github.com/skylime/mi-core-kumquat/commit/6c99c882ef4c7c46bb220771b7e08ae0dcc5bdb3) version update (@drscream)
+- [35f94d6](https://github.com/skylime/mi-core-kumquat/commit/35f94d62d4103133353e7ea2b2a390b0338702f1) changelog update (@drscream)
 
 ### 14.2.1 (2014/09/25 19:40 +00:00)
 - [d9e0ac1](https://github.com/skylime/mi-core-kumquat/commit/d9e0ac15a037f7336e19687e2e050fdf4584fd68) Add default files that are required to build mibe (@drscream)
