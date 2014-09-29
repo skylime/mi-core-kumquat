@@ -1,6 +1,12 @@
 # Changelog
 
-## 14.2.4
+## 14.2.5
+
+### New
+
+* new kumquat version. [Thomas Merkel]
+
+## 14.2.4 (2014-09-27)
 
 ### New
 
