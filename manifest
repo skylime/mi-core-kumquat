@@ -1,7 +1,7 @@
 name="core-kumquat"
 organization="SkyLime"
 brand="Instance"
-version="14.2.4"
+version="14.2.5"
 description="Standalone web services zone with apache,php,mysql,ftp and management frontend"
 homepage="https://github.com/skylime/mi-core-kumquat"
 users="root admin"
