@@ -1,10 +1,29 @@
 # Changelog
 
-## 14.2.5
+## 14.2.6
+
+### New
+
+* update to new core-base image 5f32cd38-4a1f-11e4-82e4-632b59542bc6. [Thomas Merkel]
+
+### Changes
+
+* increase memory limit. [Thomas Merkel]
+
+### Fix
+
+* proftpd ssl certificate chain and ssl problems on different clients. [Thomas Merkel]
+
+## 14.2.5 (2014-09-29)
 
 ### New
 
 * new kumquat version. [Thomas Merkel]
+* Allow global FTP users without any vhost configured. [Thomas Merkel]
+
+### Other
+
+* Merge branch 'master' of github.com:skylime/mi-core-kumquat. [Thomas Merkel]
 
 ## 14.2.4 (2014-09-27)
 
