@@ -1,6 +1,20 @@
 # Changelog
 
-## 14.2.6
+## 14.2.7
+
+### New
+
+* version update. [Thomas Merkel]
+
+### Fix
+
+* fix ftp.path for all users. [Thomas Merkel]
+
+### Other
+
+* bump kumquat version, includes fix for catch-all domains. [Sebastian Wiedenroth]
+
+## 14.2.6 (2014-10-02)
 
 ### New
 
