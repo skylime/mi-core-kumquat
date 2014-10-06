@@ -13,6 +13,7 @@ MUNIN_PLUGINS=(
 	'apache_accesses'
 	'apache_processes'
 	'apache_volume'
+	'proftpd'
 )
 
 # Exit if any commands fail
