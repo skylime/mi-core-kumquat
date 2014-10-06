@@ -6,6 +6,15 @@ KUMQUAT_VERSION='0.1.18'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
+# Munin plugins
+MUNIN_PLUGIN_SRC='/opt/local/lib/munin/plugins'
+MUNIN_PLUGIN_DST='/opt/local/etc/munin/plugins'
+MUNIN_PLUGINS=(
+	'apache_accesses'
+	'apache_processes'
+	'apache_volume'
+)
+
 # Exit if any commands fail
 set -o errexit
 
@@ -83,6 +92,22 @@ rm /tmp/kumquat-settings.py
 echo "* Copy default proftpd configuration"
 cp /tmp/proftpd.conf /opt/local/etc/proftpd.conf
 rm /tmp/proftpd.conf
+
+# Activate munin plugins
+echo "* Activate munin plugins"
+for plugin in "${MUNIN_PLUGINS[@]}"; do
+	if [ ! -x ${MUNIN_PLUGIN_SRC}/${plugin} ]; then
+		plugin_src=${plugin%_*}_
+		[ ! -x ${MUNIN_PLUGIN_SRC}/${plugin_src} ] && \
+			plugin_src=${plugin_src%%_*}_
+	else
+		plugin_src=${plugin}
+	fi
+	if [[ -x ${MUNIN_PLUGIN_SRC}/${plugin_src} ]]; then
+		echo "  ${plugin}"
+		ln -sf ${MUNIN_PLUGIN_SRC}/${plugin_src} ${MUNIN_PLUGIN_DST}/${plugin}
+	fi
+done
 
 echo "* Cleaning up"
 rm -rf /root/*
