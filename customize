@@ -93,6 +93,10 @@ echo "* Copy default proftpd configuration"
 cp /tmp/proftpd.conf /opt/local/etc/proftpd.conf
 rm /tmp/proftpd.conf
 
+# Create extra logfile folder for proftpd
+echo "* Create extra logfile folder for proftpd"
+mkdir /var/log/proftpd
+
 # Activate munin plugins
 echo "* Activate munin plugins"
 for plugin in "${MUNIN_PLUGINS[@]}"; do
