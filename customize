@@ -53,7 +53,7 @@ httpd-ssl.conf
 httpd-userdir.conf
 httpd-vhosts.conf"
 
-for CONF_RM in ${HTTP_CONF_RM}; do
+for CONF_RM in ${HTTPD_CONF_RM}; do
 	rm -f /opt/local/etc/httpd/${CONF_RM}
 done
 
