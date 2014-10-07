@@ -17,7 +17,7 @@ else
 
 	# Add menu entry to default kumquat template to link to phpMyAdmin
 	/opt/local/bin/sed -i -e \
-		's:\(.*mysql_database_list.*\):\1\n\t\t\t\t\t\t<li><a href="/phpmyadmin/">phpMyAdmin</a></li>:g' \
+		's:\(.*mysql_database_list.*\):\1\n\t\t\t\t\t\t<li><a href="/phpmyadmin/" target="_blank">phpMyAdmin</a></li>:g' \
 		/opt/kumquat/templates/base.html
 fi
 
