@@ -98,3 +98,12 @@ if mysqladmin -u root processlist &>/dev/null; then
 	mysql -u root -e "${MYSQL_INIT}" >/dev/null || \
 	  ( log "ERROR MySQL query failed to execute." && exit 31 )
 fi
+
+# Create username and password file for root user
+log "create my.cnf for root user"
+cat > /root/.my.cnf <<EOF
+[client]
+host = localhost
+user = root
+password = ${MYSQL_PW}
+EOF
