@@ -16,6 +16,8 @@ MUNIN_PLUGINS=(
 	'proftpd'
 	'proftpd_bytes'
 	'proftpd_count'
+	'mysql_queries'
+	'mysql_bytes'
 )
 
 # Exit if any commands fail
