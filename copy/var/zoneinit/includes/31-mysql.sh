@@ -59,11 +59,6 @@ gsed -i \
 	-e "s/innodb_buffer_pool_size = [0-9]*M/innodb_buffer_pool_size = ${INNODB_BUFFER_POOL_SIZE}/" \
 	/opt/local/etc/my.cnf
 
-log "configuring Quickbackup"
-svccfg -s quickbackup-percona setprop quickbackup/username = astring: ${QB_US}
-svccfg -s quickbackup-percona setprop quickbackup/password = astring: ${QB_PW}
-svcadm refresh quickbackup-percona
-
 log "shutting down an existing instance of MySQL"
 if [[ "$(svcs -Ho state percona)" == "online" ]]; then
 	svcadm disable -t percona
@@ -97,6 +92,12 @@ if mysqladmin -u root processlist &>/dev/null; then
 	log "running the access lockdown SQL query"
 	mysql -u root -e "${MYSQL_INIT}" >/dev/null || \
 	  ( log "ERROR MySQL query failed to execute." && exit 31 )
+
+	# Configure quickbackup only once
+	log "configuring Quickbackup"
+	svccfg -s quickbackup-percona setprop quickbackup/username = astring: ${QB_US}
+	svccfg -s quickbackup-percona setprop quickbackup/password = astring: ${QB_PW}
+	svcadm refresh quickbackup-percona
 fi
 
 # Create username and password file for root user
