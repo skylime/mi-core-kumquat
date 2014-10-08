@@ -29,6 +29,7 @@ php55-dom
 percona-server
 percona-client
 quickbackup-percona
+percona56-xtrabackup
 apache
 phpmyadmin
 py27-gunicorn
