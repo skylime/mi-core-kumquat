@@ -1,5 +1,40 @@
 # Changelog
 
+## 14.2.8
+
+### New
+
+* add nginx to use it for microcaching and ssl. [Thomas Merkel]
+* add some basic mysql checks we would like to have. [Thomas Merkel]
+* allow munin to query mysql for statistics. [Thomas Merkel]
+* add proftpd munin monitoring. [Thomas Merkel]
+* use logadm for proftpd logfile. [Thomas Merkel]
+* create logfiles for proftpd. [Thomas Merkel]
+* add more munin plugins for apache monitoring. [Thomas Merkel]
+
+### Changes
+
+* add more proftpd scripts for monitoring. [Thomas Merkel]
+* add listen for status page for munin. [Thomas Merkel]
+
+### Fix
+
+* have a working and running quickbackup-percona. [Thomas Merkel]
+
+    Only setup quickbackup with username and password once. We should also
+    enable the backup by default.
+
+* we require percona56-xtrabackup for doing backups. [Thomas Merkel]
+* open phpMyAdmin in new tab. [Thomas Merkel]
+* remove old apache configs for image. [Thomas Merkel]
+
+### Other
+
+* new version update and base image. [Thomas Merkel]
+* use upgrade with pkg_add. [Thomas Merkel]
+* Force our apache version to be installed (because of an SSL memoryleek fix) [Thomas Merkel]
+* respawn threads to combat memory leaks. [Sebastian Wiedenroth]
+
 ## 14.2.7
 
 ### New
