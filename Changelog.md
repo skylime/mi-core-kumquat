@@ -1,5 +1,14 @@
 # Changelog
 
+## 14.2.9
+
+### Other
+
+* Version upgrade to new kumquat. Includes patches for subaddress extension.
+  [Thomas Merkel]
+* Allow file permission modification by ftp user. [Thomas Merkel]
+* Enable php55-zip package for PHP. [Thomas Merkel]
+
 ## 14.2.8
 
 ### New
