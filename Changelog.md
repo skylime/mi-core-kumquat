@@ -1,5 +1,11 @@
 # Changelog
 
+## 14.2.10
+
+### Other
+
+* minimal fix for wrong bool default value in django. [Thomas Merkel]
+
 ## 14.2.9
 
 ### Other
