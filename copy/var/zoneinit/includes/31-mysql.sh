@@ -10,6 +10,7 @@ mdata-put mysql_pw "${MYSQL_PW}"
 # Generate svccfg happy password for quickbackup-percona
 # (one without special characters)
 log "getting qb_pw"
+QB_PW=${QB_PW:-$(mdata-get mysql_qb_pw 2>/dev/null)} || \
 QB_PW=$(od -An -N8 -x /dev/random | head -1 | sed 's/^[ \t]*//' | tr -d ' ');
 QB_US=qb-$(zonename | awk -F\- '{ print $5 }');
 
@@ -92,13 +93,13 @@ if mysqladmin -u root processlist &>/dev/null; then
 	log "running the access lockdown SQL query"
 	mysql -u root -e "${MYSQL_INIT}" >/dev/null || \
 	  ( log "ERROR MySQL query failed to execute." && exit 31 )
-
-	# Configure quickbackup only once
-	log "configuring Quickbackup"
-	svccfg -s quickbackup-percona setprop quickbackup/username = astring: ${QB_US}
-	svccfg -s quickbackup-percona setprop quickbackup/password = astring: ${QB_PW}
-	svcadm refresh quickbackup-percona
 fi
+
+# Configure quickbackup only once
+log "configuring Quickbackup"
+svccfg -s quickbackup-percona setprop quickbackup/username = astring: ${QB_US}
+svccfg -s quickbackup-percona setprop quickbackup/password = astring: ${QB_PW}
+svcadm refresh quickbackup-percona
 
 # Create username and password file for root user
 log "create my.cnf for root user"
