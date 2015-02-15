@@ -19,9 +19,12 @@ provision state. We recommend a valid `kumquat_ssl` certificate.
 - `kumquat_ssl`: ssl certificate for kumquat web interface
 - `kumquat_admin`: admin password for kumquat interface
 - `core_mail_token`: mail export token from kumquat
+- `core_mail_whitelist`: mail whitelist for all accounts
 - `mysql_pw`: mysql root password
 - `mysql_kumquat_pw`: kumquat mysql password
 - `phpmyadmin_allow`: limit phpMyAdmin access by ip or host (default is allow all)
+- `phpmyadmin_url`: URL to phpMyAdmin (default `/phpmyadmin` if `phpmyadmin_allow` is not set)
+- `webmail_url`: URL to external Webmail
 
 ## services
 
