@@ -14,10 +14,4 @@ else
 	# Default allow from all and add menu entry
 	/opt/local/bin/sed -i -e 's:PHPMYADMIN_ALLOW_FROM:all:g' \
 		/opt/local/etc/httpd/vhosts/01-kumquat.conf
-
-	# Add menu entry to default kumquat template to link to phpMyAdmin
-	/opt/local/bin/sed -i -e \
-		's:\(.*mysql_database_list.*\):\1\n\t\t\t\t\t\t<li><a href="/phpmyadmin/" target="_blank">phpMyAdmin</a></li>:g' \
-		/opt/kumquat/templates/base.html
 fi
-
