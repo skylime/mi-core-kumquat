@@ -1,5 +1,25 @@
 # Changelog
 
+## 14.2.11
+
+### New
+
+* version bump. [Thomas Merkel]
+* add requirements for django-settings-export. [Thomas Merkel]
+* Modify kumquat config for external URLs. [Thomas Merkel]
+* Update readme with new mdata information for whitelist, phpMyAdmin URL and Webmail URL. [Thomas Merkel]
+* Don't use this script to set URL for phpMyAdmin because we've mdata information now. [Thomas Merkel]
+* Add `core_mail_whitelist` as mdata information. [Thomas Merkel]
+* Add new kumquat settings.py file from the origin. We need to find a other solution in the future to overwrite config files. [Thomas Merkel]
+* Update to new kumquat version 0.1.22. [Thomas Merkel]
+
+### Fix
+
+* Fix quick-backup loosing password on reprovision. [Thomas Merkel]
+
+    We will save the password in mdata variable for the future, but we
+    still need to set it by reprovision.
+
 ## 14.2.10
 
 ### Other
