@@ -46,6 +46,20 @@ else
 	VHOST_DATASET=''
 fi
 
+# phpMyAdmin URL
+if ! mdata-get phpmyadmin_allow 1>/dev/null 2>&1; then
+	if mdata-get phpmyadmin_url 1>/dev/null 2>&1; then
+		KUMQUAT_PHPMYADMIN_URL=$(mdata-get phpmyadmin_url)
+	else
+		KUMQUAT_PHPMYADMIN_URL='/phpmyadmin/'
+	fi
+fi
+
+# Webmail URL
+if mdata-get webmail_url 1>/dev/null 2>&1; then
+	KUMQUAT_WEBMAIL_URL=$(mdata-get webmail_url)
+fi
+
 cat >> /opt/kumquat/kumquat_web/settings.py <<EOF
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "${SECRET_KEY}"
@@ -80,6 +94,8 @@ KUMQUAT_VHOST_GID        = ${WWW_GID}
 KUMQUAT_USE_ZFS          = ${USE_ZFS}
 KUMQUAT_VHOST_DATASET    = "${VHOST_DATASET}"
 KUMQUAT_WEBSERVER_RELOAD = 'svcadm refresh apache'
+KUMQUAT_PHPMYADMIN_URL   = "${KUMQUAT_PHPMYADMIN_URL}"
+KUMQUAT_WEBMAIL_URL      = "${KUMQUAT_WEBMAIL_URL}"
 CORE_MAIL_TOKEN          = "${CORE_MAIL_TOKEN}"
 EOF
 
