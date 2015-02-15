@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import sys, os
+from django.conf import global_settings
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -49,6 +50,10 @@ WSGI_APPLICATION = 'kumquat_web.wsgi.application'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+	'django_settings_export.settings_export',
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 LANGUAGE_CODE = 'en-us'
@@ -61,7 +66,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_URL = '/static/'
 
-# Redirect after LOGIN
 LOGIN_REDIRECT_URL = '/'
 
 # Logging
@@ -109,3 +113,12 @@ LOGGING = {
 	},
 }
 
+# kumquat
+KUMQUAT_WEBMAIL_URL    = ''
+KUMQUAT_PHPMYADMIN_URL = ''
+
+# Allow the following variables in the template
+SETTINGS_EXPORT = [
+	'KUMQUAT_WEBMAIL_URL',
+	'KUMQUAT_PHPMYADMIN_URL',
+]
