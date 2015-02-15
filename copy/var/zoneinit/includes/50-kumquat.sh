@@ -83,6 +83,13 @@ KUMQUAT_WEBSERVER_RELOAD = 'svcadm refresh apache'
 CORE_MAIL_TOKEN          = "${CORE_MAIL_TOKEN}"
 EOF
 
+# valid whitelist values are described at https://mail.core.io/api/
+# set this to None (or leave it undefined) to whitelist the same domain as the account
+if mdata-get core_mail_whitelist 2>/dev/null; then
+	echo "CORE_MAIL_WHITELIST = \"$(mdata-get core_mail_whitelist)\"" \
+		>> /opt/kumquat/kumquat_web/settings.py
+fi
+
 # Init django data and create admin user
 /opt/kumquat/manage.py syncdb --noinput
 
