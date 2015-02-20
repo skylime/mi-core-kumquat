@@ -1,7 +1,7 @@
 #!/bin/bash
 # Configure kumquat
 
-host=$(mdata-get sdc:hostname)
+host=$(hostname)
 cert_dir='/opt/local/etc/httpd/ssl/'
 
 # Setup hostname for kumquat config
