@@ -1,5 +1,21 @@
 # Changelog
 
+## 14.2.12
+
+### Other
+
+* version update of mibe image. [Thomas Merkel]
+* Workaround for zerorpc. [Thomas Merkel]
+* fix issue with manifest. [Thomas Merkel]
+* well we need the user first. [Thomas Merkel]
+* make shit more secure, for example the backend socket. [Thomas Merkel]
+* fix smf. [Thomas Merkel]
+* fix missing settings. [Thomas Merkel]
+* add py27-msgpack. [Thomas Merkel]
+* add missing deps for zeromq and gevent. [Thomas Merkel]
+* Add ZFS snapshot support to Kumquat, includes new background service. [Thomas Merkel]
+* use command hostname and not mdata-get sdc:hostname, because it's sometimes not set and than apache will not work. [Thomas Merkel]
+
 ## 14.2.11
 
 ### New
