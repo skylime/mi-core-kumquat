@@ -31,6 +31,11 @@ mkdir -p /opt/kumquat
 echo "* Download and extract kumquat to /opt/kumquat"
 curl -L "https://github.com/wiedi/kumquat/archive/v${KUMQUAT_VERSION}.tar.gz" | tar xz -C /opt/kumquat --strip-components=1
 
+# Add kumquat user
+echo "* Add kumquat user"
+groupadd kumquat
+useradd -d /opt/kumquat -c "kumquat user" -s /usr/bin/false -g kumquat kumquat
+
 # Setup permissions for kumquat folder
 echo "* Setup permissions for kumquat folder"
 chown -R kumquat:www /opt/kumquat
@@ -38,11 +43,6 @@ chown -R kumquat:www /opt/kumquat
 # Install missing dependencies via pip
 echo "* Install missing dependencies via pip"
 pip install django django-bootstrap3 django-messagegroups django-settings-export
-
-# Add kumquat user
-echo "* Add kumquat user"
-groupadd kumquat
-useradd -d /opt/kumquat -c "kumquat user" -s /usr/bin/false -g kumquat kumquat
 
 # Setup gunicorn
 echo "* Setup gunicorn"
