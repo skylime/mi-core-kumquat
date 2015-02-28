@@ -119,6 +119,6 @@ fi
 (cd /opt/kumquat/; ./manage.py update_vhosts)
 
 # Create cronjobs for kumquat
-CRON="0,5,10,15,20,25,30,35,40,45,50,55 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
+CRON="0 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
 0,15,30,45 * * * * (cd /opt/kumquat/; ./manage.py delete_vhosts)"
 (crontab -l 2>/dev/null || true; echo "$CRON" ) | sort | uniq | crontab

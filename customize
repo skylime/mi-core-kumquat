@@ -2,7 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-KUMQUAT_VERSION='0.1.22'
+KUMQUAT_VERSION='0.1.23'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
@@ -43,6 +43,10 @@ pip install django django-bootstrap3 django-messagegroups django-settings-export
 echo "* Setup gunicorn"
 mkdir -p /opt/local/etc/gunicorn
 svccfg import /tmp/gunicorn.xml
+
+# Setup kumquat
+echo "* Setup kumquat backend service"
+svccfg import /tmp/kumquat.xml
 
 # Force our apache version to be installed (because of an SSL memoryleek fix)
 echo "* Force our apache version to be installed (because of an SSL memoryleek fix)"
