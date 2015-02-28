@@ -42,3 +42,4 @@ py27-SSLCrypto
 py27-expat
 py27-zmq
 py27-gevent
+py27-msgpack
