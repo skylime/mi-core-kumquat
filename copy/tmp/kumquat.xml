@@ -17,6 +17,7 @@
     </property_group>
     <instance name='default' enabled='false'>
       <method_context working_directory='/tmp'>
+        <method_credential user='root' group='kumquat' />
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin'/>
           <envvar name='PYTHONPATH' value='/opt/local/lib/python2.7/site-packages'/>
@@ -24,6 +25,7 @@
       </method_context>
     </instance>
     <instance name='backend' enabled='true'>
+      <method_credential user='root' group='kumquat' />
       <method_context working_directory='/opt/kumquat'>
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin'/>

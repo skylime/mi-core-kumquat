@@ -38,9 +38,9 @@
       </method_context>
       <property_group name='config' type='application'>
         <propval name='app' type='astring' value='kumquat_web.wsgi:application'/>
-        <propval name='group' type='astring' value='www'/>
+        <propval name='group' type='astring' value='kumquat'/>
         <propval name='listen' type='astring' value='127.0.0.1:9000'/>
-        <propval name='user' type='astring' value='www'/>
+        <propval name='user' type='astring' value='kumquat'/>
         <propval name='worker' type='integer' value='1'/>
       </property_group>
     </instance>
