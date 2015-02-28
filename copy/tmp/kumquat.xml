@@ -25,8 +25,8 @@
       </method_context>
     </instance>
     <instance name='backend' enabled='true'>
-      <method_credential user='root' group='kumquat' />
       <method_context working_directory='/opt/kumquat'>
+        <method_credential user='root' group='kumquat' />
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin'/>
         </method_environment>
