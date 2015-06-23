@@ -34,6 +34,7 @@ INSTALLED_APPS = (
 	'ftp',
 	'status',
 	'mail',
+	'cron',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,6 +119,7 @@ KUMQUAT_BACKEND_SOCKET = "ipc:///tmp/kumquat_backend"
 KUMQUAT_USE_ZFS        = True
 KUMQUAT_WEBMAIL_URL    = ''
 KUMQUAT_PHPMYADMIN_URL = ''
+KUMQUAT_CRONJOB_CMD    = ['sudo', '-u', 'www', 'crontab']
 
 # Allow the following variables in the template
 SETTINGS_EXPORT = [
