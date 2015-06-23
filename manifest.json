@@ -1,0 +1,24 @@
+{
+	"name":         "core-kumquat",
+	"version":      "14.4.0",
+	"description":  "Standalone web services zone with apache,php,mysql,ftp and management frontend",
+	"organization": "SkyLime",
+	"brand":        "Instance",
+	"homepage":     "https://github.com/skylime/mi-core-kumquat",
+	"base":         "bdf81f18-cf9a-4327-9a87-259832772271",
+	"customer_metadata": {
+		"root_authorized_keys": {"type": "text", "description": "SSH public key(s) for the root user"},
+		"syslog_host":          {"type": "text", "description": "syslog server IP address and port seperated by colon"},
+		"mail_smarthost":       {"type": "text", "description": "hostname of remote smtp server"},
+		"mail_auth_user":       {"type": "text", "description": "smtp username if authentication is required"},
+		"mail_auth_pass":       {"type": "text", "description": "smtp password"},
+		"mail_adminaddr":       {"type": "text", "description": "admin email address alias for all mails to root@localhost"},
+		"kumquat_ssl":          {"type": "text", "description": "ssl certificate for kumquat web interface"},
+		"kumquat_admin":        {"type": "text", "description": "admin password for kumquat interface"},
+		"core_mail_token":      {"type": "text", "description": "mail export token from kumquat"},
+		"core_mail_whitelist":  {"type": "text", "description": "mail whitelist for all accounts"},
+		"mysql_pw":             {"type": "text", "description": "mysql root password"},
+		"phpmyadmin_allow":     {"type": "text", "description": "limit phpMyAdmin access by ip or host (default is allow all)"},
+		"webmail_url":          {"type": "text", "description": "URL to external Webmail"}
+	}
+}
