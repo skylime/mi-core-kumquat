@@ -55,10 +55,6 @@ svccfg import /tmp/gunicorn.xml
 echo "* Setup kumquat backend service"
 svccfg import /tmp/kumquat.xml
 
-# Force our apache version to be installed (because of an SSL memoryleek fix)
-echo "* Force our apache version to be installed (because of an SSL memoryleek fix)"
-pkg_add -fu http://pkgsrc.smartos.skylime.net/skylime-extra/2014Q2/x86_64/apache-2.4.10nb1.tgz
-
 # Remove unused httpd config files
 echo "* Remove unused httpd config files"
 HTTPD_CONF_RM="httpd-autoindex.conf
