@@ -1,5 +1,39 @@
 # Changelog
 
+## 15.3.0
+
+### New
+
+* Version upgrade to 15.3.0 includes the new Kumquat version. [Thomas Merkel]
+
+	Support new Kumquat version with features like cronjobs, zfs snapshots, etc.
+		Install proftpd from SkyLime with extra module support for percona
+		Remove unused nginx from release
+		Create missing Trash folder for old backups from Kumquat
+
+* Use default apache from pkgsrc. [Thomas Merkel]
+
+### Fix
+
+* Percona backup scripts. [Thomas Merkel]
+* Fix smf. [Thomas Merkel]
+* Fix missing settings. [Thomas Merkel]
+* Fix issue with manifest. [Thomas Merkel]
+
+### Other
+
+* Add new ProFTPd modules to configuration file. [Thomas Merkel]
+* Cleanup package list and add cron job for kumquat. [Thomas Merkel]
+* Cleanup customize script to support new core-base image. [Thomas Merkel]
+* Update license file for SkyLime GmbH. [Thomas Merkel]
+* Create snapshots for data and databases automatically. [Thomas Merkel]
+* Update to new PHP version 5.6 and add package for znapzend. [Thomas Merkel]
+* Make ssl more secure as default. [Thomas Merkel]
+* Make shit more secure, for example the backend socket. [Thomas Merkel]
+* Add py27-msgpack. [Thomas Merkel]
+* Add missing deps for zeromq and gevent. [Thomas Merkel]
+* Use command hostname and not mdata-get sdc:hostname, because it&#x27;s sometimes not set and than apache will not work. [Thomas Merkel]
+
 ## 14.2.12
 
 ### Other
