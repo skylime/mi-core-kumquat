@@ -1,4 +1,7 @@
 # List packages to add to your image one per line.
+# tools
+gsed
+# php
 php56-fpm
 php56-pdo
 php56-pdo_mysql
@@ -27,12 +30,15 @@ php56-bz2
 php56-bcmath
 php56-dom
 php56-zip
+# sql
 percona-server
 percona-client
 quickbackup-percona
 percona56-xtrabackup
+# web
 apache
 #phpmyadmin
+# python
 py27-gunicorn
 py27-pip
 py27-passlib
@@ -43,6 +49,8 @@ py27-zmq
 py27-gevent
 py27-msgpack
 py27-percona56db
+# ftp
 http://pkgsrc.smartos.skylime.net/skylime-extra/2015Q3/proftpd-1.3.5anb2.tgz
 http://pkgsrc.smartos.skylime.net/skylime-extra/2015Q3/proftpd-percona56-1.3.5a.tgz
+# backup
 znapzend

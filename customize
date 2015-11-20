@@ -35,7 +35,7 @@ echo "* Setup permissions for kumquat folder"
 chown -R kumquat:www /opt/kumquat
 
 echo "* Install missing dependencies via pip"
-pip install django django-bootstrap3 django-messagegroups django-settings-export
+pip install django django-bootstrap3 django-messagegroups django-settings-export django-cronfield
 echo "* Workaround for zerorpc"
 pip install --no-deps zerorpc
 
