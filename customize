@@ -63,9 +63,6 @@ for CONF_RM in ${HTTPD_CONF_RM}; do
 	rm -f /opt/local/etc/httpd/${CONF_RM}
 done
 
-echo "* Create Trash folder for removed vHosts"
-mkdir -p /var/www/.Trash
-
 echo "* Remove unused mysql stuff from base"
 rm -r /var/mysql/*
 
