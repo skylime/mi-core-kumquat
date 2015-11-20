@@ -8,14 +8,14 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
 # Munin plugins
 MUNIN_PLUGINS="
-	'apache_accesses'
-	'apache_processes'
-	'apache_volume'
-	'proftpd'
-	'proftpd_bytes'
-	'proftpd_count'
-	'mysql_queries'
-	'mysql_bytes'
+	apache_accesses
+	apache_processes
+	apache_volume
+	proftpd
+	proftpd_bytes
+	proftpd_count
+	mysql_queries
+	mysql_bytes
 "
 
 # Exit if any commands fail
