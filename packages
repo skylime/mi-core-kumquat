@@ -30,6 +30,7 @@ php56-bz2
 php56-bcmath
 php56-dom
 php56-zip
+php56-ftp
 # sql
 percona-server
 percona-client
