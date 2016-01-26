@@ -86,7 +86,7 @@ DATABASES = {
 }
 
 # Kumquat
-KUMQUAT_CERT_PATH        = '/opt/local/etc/httpd/ssl/'
+KUMQUAT_CERT_PATH        = '/opt/local/etc/kumquat/ssl/'
 KUMQUAT_VHOST_CONFIG     = '/opt/local/etc/httpd/vhosts/vhosts.conf'
 KUMQUAT_VHOST_ROOT       = '/var/www/'
 KUMQUAT_VHOST_UID        = ${WWW_UID}

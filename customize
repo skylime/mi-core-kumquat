@@ -39,6 +39,9 @@ pip install django django-bootstrap3 django-messagegroups django-settings-export
 echo "* Workaround for zerorpc"
 pip install --no-deps zerorpc
 
+echo "* Create extra ssl folder for kumquat"
+mkdir -p /opt/local/etc/kumquat/ssl
+
 echo "* Setup gunicorn"
 mkdir -p /opt/local/etc/gunicorn
 svccfg import /tmp/gunicorn.xml
