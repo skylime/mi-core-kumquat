@@ -24,7 +24,7 @@
         </method_environment>
       </method_context>
     </instance>
-    <instance name='backend' enabled='true'>
+    <instance name='backend' enabled='false'>
       <method_context working_directory='/opt/kumquat'>
         <method_credential user='root' group='kumquat' />
         <method_environment>

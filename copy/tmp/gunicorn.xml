@@ -30,7 +30,7 @@
         <propval name='worker' type='integer' value='1'/>
       </property_group>
     </instance>
-    <instance name='kumquat' enabled='true'>
+    <instance name='kumquat' enabled='false'>
       <method_context working_directory='/opt/kumquat'>
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin'/>

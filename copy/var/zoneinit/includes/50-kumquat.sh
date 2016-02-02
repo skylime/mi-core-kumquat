@@ -107,7 +107,7 @@ if mdata-get core_mail_whitelist 2>/dev/null; then
 fi
 
 # Init django data and create admin user
-/opt/kumquat/manage.py syncdb --noinput
+/opt/kumquat/manage.py migrate --noinput
 
 # Create superadmin user
 if [[ ${DB_CREATED} == true ]]; then
@@ -123,3 +123,7 @@ CRON="0 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
 0,15,30,45 * * * * (cd /opt/kumquat/; ./manage.py delete_vhosts)
 1,11,21,31,41,51 * * * * (cd /opt/kumquat; ./manage.py update_cronjobs)"
 (crontab -l 2>/dev/null || true; echo "$CRON" ) | sort | uniq | crontab
+
+# Enable gunicorn and kumquat backend
+svcadm enable svc:/application/kumquat:backend
+svcadm enable svc:/network/gunicorn:kumquat
