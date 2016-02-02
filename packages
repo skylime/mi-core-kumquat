@@ -37,6 +37,7 @@ percona-client
 quickbackup-percona
 percona56-xtrabackup
 # web
+nginx
 apache
 phpmyadmin
 # python
