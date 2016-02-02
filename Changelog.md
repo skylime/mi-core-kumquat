@@ -1,5 +1,40 @@
 # Changelog
 
+## %%version%% (unreleased)
+
+### New
+
+* Version bump to kumquat v0.1.27 [Thomas Merkel]
+* Provide nginx with microcache feature [Thomas Merkel]
+
+### Fix
+
+* Problem with Munin-Plugins not installed automatically. [Thomas Merkel]
+
+  Because of the wrong quote for the plugins they are not automatically
+  installed on the systems. After removing the inverted comma the script
+  install them.
+
+* Issue with backend service on MySQL reconnect [Thomas Merkel]
+
+### Other
+
+* Be sure kumquat services run after setup. [Thomas Merkel]
+* Update kumquat settings.py to support django 1.8. [Thomas Merkel]
+* Enable nginx by default. [Thomas Merkel]
+* Auto for worker_processes. [Thomas Merkel]
+* Require %a for logging the correct ip address. [Thomas Merkel]
+* Update permissions for cache dir. [Thomas Merkel]
+* Set nginx cache dir to /var/cache/nginx. [Thomas Merkel]
+* Enabled config for mod_remoteip. [Thomas Merkel]
+* Enable remoteIP for httpd. [Thomas Merkel]
+* Provide nginx config for microcache. [Thomas Merkel]
+* Listen only on localhost for port 80 via apache. [Thomas Merkel]
+* Install nginx by default. [Thomas Merkel]
+* Create and use extra ssl folder for kumquat service. [Thomas Merkel]
+* Add php-ftp package and enable it via php.ini. [Thomas Merkel]
+
+
 ## 15.3.0
 
 ### New
