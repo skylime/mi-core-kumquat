@@ -107,7 +107,7 @@ if mdata-get core_mail_whitelist 2>/dev/null; then
 fi
 
 # Init django data and create admin user
-/opt/kumquat/manage.py migrate --noinput
+/opt/kumquat/manage.py migrate --noinput --fake-initial
 
 # Create superadmin user
 if [[ ${DB_CREATED} == true ]]; then

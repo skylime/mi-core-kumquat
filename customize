@@ -2,7 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-KUMQUAT_VERSION='0.1.27'
+KUMQUAT_VERSION='0.1.28'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
@@ -69,6 +69,9 @@ httpd-vhosts.conf"
 for CONF_RM in ${HTTPD_CONF_RM}; do
 	rm -f /opt/local/etc/httpd/${CONF_RM}
 done
+
+echo "* Change www user to /var/www for cronjobs"
+usermod -d /var/www www
 
 echo "* Remove unused mysql stuff from base"
 rm -r /var/mysql/*
