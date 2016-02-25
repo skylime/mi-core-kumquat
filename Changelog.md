@@ -1,5 +1,21 @@
 # Changelog
 
+## 15.4.0
+
+### New
+
+* Enable percona query cache by default. [Thomas Merkel]
+* Kumquat version bump with migration fix. [Thomas Merkel]
+
+  Version bump of mi-core-base to 15.4.0 release. Include notification fixes and Kumquat (django) fix for migrations.
+
+### Fix
+
+* Kumquat version bump and proftpd from pkgsrc. [Thomas Merkel]
+
+  Kumquat fix for ftp accounts without vhost and installation of proftpd via pkgsrc
+
+
 ## 15.3.1
 
 ### New
