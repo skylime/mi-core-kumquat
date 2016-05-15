@@ -1,5 +1,17 @@
 # Changelog
 
+## 16.1.0
+
+### New
+
+* Version update to new core-base version. [Thomas Merkel]
+
+  * Kumquat Let&#x27;s Encrypt support
+  * Kumquat ServerAlias support
+  * Kumquat Error Log in user interface
+  * Kumquat Bugfix for FTP accounts
+
+
 ## 15.4.0
 
 ### New
