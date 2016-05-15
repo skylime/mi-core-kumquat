@@ -136,6 +136,11 @@ KUMQUAT_USE_ZFS        = True
 KUMQUAT_WEBMAIL_URL    = ''
 KUMQUAT_PHPMYADMIN_URL = ''
 KUMQUAT_CRONJOB_CMD    = ['sudo', '-u', 'www', 'crontab']
+# Let's Encrypt
+LETSENCRYPT_TOS          = 'https://letsencrypt.org/documents/LE-SA-v1.0.1-July-27-2015.pdf'
+LETSENCRYPT_ACME_SERVER  = 'https://acme-v01.api.letsencrypt.org/directory'
+LETSENCRYPT_ACME_FOLDER  = '/var/letsencrypt/acme/.well-known/acme-challenge/'
+LETSENCRYPT_STATE_FOLDER = '/var/letsencrypt/state/'
 
 # Allow the following variables in the template
 SETTINGS_EXPORT = [
