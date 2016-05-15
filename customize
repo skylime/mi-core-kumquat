@@ -2,7 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-KUMQUAT_VERSION='0.1.31'
+KUMQUAT_VERSION='0.1.32'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
@@ -104,7 +104,8 @@ echo "* Create Let's Encrypt folders"
 mkdir -p /var/letsencrypt/state/
 mkdir -p /var/letsencrypt/acme/.well-known/acme-challenge/
 
-echo "* Update Let's Encrypt HOME permissions"
+echo "* update Let's Encrypt HOME permissions"
+chmod -R 700 /var/letsencrypt/state/
 chown -R letsencrypt:other /var/letsencrypt/
 
 echo "* Activate munin plugins"

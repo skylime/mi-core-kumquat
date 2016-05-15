@@ -101,10 +101,10 @@ if mysqladmin -u root processlist &>/dev/null; then
 fi
 
 # Configure quickbackup only once
-log "configuring Quickbackup"
-svccfg -s quickbackup-percona setprop quickbackup/username = astring: ${QB_US}
-svccfg -s quickbackup-percona setprop quickbackup/password = astring: ${QB_PW}
-svcadm refresh quickbackup-percona
+#log "configuring Quickbackup"
+#svccfg -s quickbackup-percona setprop quickbackup/username = astring: ${QB_US}
+#svccfg -s quickbackup-percona setprop quickbackup/password = astring: ${QB_PW}
+#svcadm refresh quickbackup-percona
 
 # Create username and password file for root user
 log "create my.cnf for root user"
