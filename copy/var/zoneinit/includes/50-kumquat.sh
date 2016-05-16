@@ -89,6 +89,7 @@ DATABASES = {
 KUMQUAT_CERT_PATH        = '/opt/local/etc/kumquat/ssl/'
 KUMQUAT_VHOST_CONFIG     = '/opt/local/etc/httpd/vhosts/vhosts.conf'
 KUMQUAT_VHOST_ROOT       = '/var/www/'
+KUMQUAT_VHOST_ERROR_LOG  = '/var/www/{vhost}/logs/error.log'
 KUMQUAT_VHOST_UID        = ${WWW_UID}
 KUMQUAT_VHOST_GID        = ${WWW_GID}
 KUMQUAT_USE_ZFS          = ${USE_ZFS}
