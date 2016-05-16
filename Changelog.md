@@ -11,6 +11,13 @@
   * Kumquat Error Log in user interface
   * Kumquat Bugfix for FTP accounts
 
+### Fix
+
+* Fix issue with wrong umask and broken pkgsrc packages. [Thomas Merkel]
+
+  * remove xtrabackup
+  * fix umask for acme token
+  * fix alias for acme token path
 
 ## 15.4.0
 
