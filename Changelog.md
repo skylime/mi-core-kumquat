@@ -19,6 +19,9 @@
   * fix umask for acme token
   * fix alias for acme token path
 
+* Fix user permissions for letsencrypt user. [Thomas Merkel]
+* Provide path to error logs of vhosts to Kumquat. [Thomas Merkel]
+
 ## 15.4.0
 
 ### New
