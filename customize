@@ -2,7 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-KUMQUAT_VERSION='0.1.32'
+KUMQUAT_VERSION='0.1.34'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
@@ -98,7 +98,7 @@ echo "* Create extra logfile folder for proftpd"
 mkdir /var/log/proftpd
 
 echo "* Create extra Let's Encrypt user for user account security"
-useradd -c "Lets Encrypt SSL certificate service" -b /var -g other -m letsencrypt
+useradd -c "Lets Encrypt SSL certificate service" -b /var -g kumquat -m letsencrypt
 
 echo "* Create Let's Encrypt folders"
 mkdir -p /var/letsencrypt/state/
@@ -106,7 +106,7 @@ mkdir -p /var/letsencrypt/acme/.well-known/acme-challenge/
 
 echo "* update Let's Encrypt HOME permissions"
 chmod -R 700 /var/letsencrypt/state/
-chown -R letsencrypt:other /var/letsencrypt/
+chown -R letsencrypt:kumquat /var/letsencrypt/
 
 echo "* Activate munin plugins"
 /opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}
