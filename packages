@@ -34,8 +34,8 @@ php56-ftp
 # sql
 percona-server
 percona-client
-#quickbackup-percona
-#percona56-xtrabackup
+quickbackup-percona
+percona56-xtrabackup
 # web
 nginx
 apache
