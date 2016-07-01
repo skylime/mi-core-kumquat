@@ -1,5 +1,12 @@
 # Changelog
 
+## 16.1.1
+
+### Fix
+
+* Modify dz to update and upgrade all installed packages to the newest Q-Release. [Thomas Merkel]
+* Provide new Kumquat version with SSL CA fix for Let&#x27;s Encrypt. [Thomas Merkel]
+
 ## 16.1.0
 
 ### New
