@@ -32,8 +32,8 @@ php56-dom
 php56-zip
 php56-ftp
 # sql
-percona-server
-percona-client
+percona-server-5.6.31
+percona-client-5.6.31
 quickbackup-percona
 percona56-xtrabackup
 # web
