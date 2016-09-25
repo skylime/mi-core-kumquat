@@ -35,9 +35,9 @@ echo "* Setup permissions for kumquat folder"
 chown -R kumquat:www /opt/kumquat
 
 echo "* Install missing dependencies via pip"
-pip install django django-bootstrap3 django-messagegroups django-settings-export django-cronfield django-annoying free-tls-certificates
+pip install django==1.8.12 django-bootstrap3 django-messagegroups django-settings-export django-cronfield django-annoying free-tls-certificates
 echo "* Workaround for zerorpc"
-pip install --no-deps zerorpc
+pip install --no-deps zerorpc==0.5.2
 
 echo "* Create extra ssl folder for kumquat"
 mkdir -p /opt/local/etc/kumquat/ssl
