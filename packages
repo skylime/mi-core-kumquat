@@ -34,12 +34,10 @@ php56-ftp
 # sql
 percona-server-5.6.31
 percona-client-5.6.31
-quickbackup-percona
-percona56-xtrabackup
 # web
 nginx
 apache
-phpmyadmin
+http://pkgsrc.smartos.skylime.net/packages/SmartOS/2016Q1/x86_64/All/phpmyadmin-4.3.12.tgz
 # python
 py27-gunicorn
 py27-pip
