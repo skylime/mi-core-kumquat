@@ -1,5 +1,25 @@
 # Changelog
 
+## 16.2.0
+
+### New
+
+* Enable Apache deflate module by default. [Thomas Merkel]
+
+### Fix
+
+* Remove quickbackup-percona because of high memory usage. [Thomas Merkel]
+
+  xtrabackup / quickbackup requires to much memory and kill most of the zones which only have 1-2GB of memory. Because we use zfs snapshots we don&#x27;t create extra MySQL / Percona dumps.
+
+* Fix, freeze Django and ZeroRPC version. [Thomas Merkel]
+* Fix usage of percona 5.6.x. [Thomas Merkel]
+
+### Other
+
+* Version bump to 16.2 core-base. [Thomas Merkel]
+* Updated Let&#x27;s Encrypt TOS. [Thomas Merkel]
+
 ## 16.1.1
 
 ### Fix
