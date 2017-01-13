@@ -1,6 +1,4 @@
 # List packages to add to your image one per line.
-# tools
-gsed
 # php
 php56-fpm
 php56-pdo
@@ -37,7 +35,7 @@ percona-client-5.6.31
 # web
 nginx
 apache
-http://pkgsrc.smartos.skylime.net/packages/SmartOS/2016Q1/x86_64/All/phpmyadmin-4.3.12.tgz
+http://pkgsrc.smartos.skylime.net/packages/SmartOS/2016Q1/i386/All/phpmyadmin-4.3.12.tgz
 # python
 py27-gunicorn
 py27-pip
@@ -52,5 +50,3 @@ py27-percona56db
 # ftp
 proftpd
 proftpd-percona56
-# backup
-znapzend
