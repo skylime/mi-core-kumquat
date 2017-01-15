@@ -44,10 +44,6 @@ pip install --no-deps zerorpc==0.6.0
 echo "* Create extra ssl folder for kumquat"
 mkdir -p /opt/local/etc/kumquat/ssl
 
-echo "* Create nginx cache folder"
-mkdir -p /var/cache/nginx
-chown www /var/cache/nginx
-
 echo "* Setup gunicorn"
 mkdir -p /opt/local/etc/gunicorn
 svccfg import /tmp/gunicorn.xml

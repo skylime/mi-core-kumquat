@@ -35,7 +35,6 @@ php56-ftp
 percona-server-5.6.34
 percona-client-5.6.34
 # web
-nginx
 apache
 phpmyadmin
 # python
