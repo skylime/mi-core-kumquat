@@ -5,6 +5,7 @@
 ### New
 
 * Update to newest kumquat version which includes python3 support. [Thomas Merkel]
+* Remove nginx and use only apache as default webserver. [Thomas Merkel]
 
 ### Other
 
