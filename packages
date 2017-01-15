@@ -48,7 +48,7 @@ py35-expat
 py35-zmq
 http://pkgsrc.smartos.skylime.net/skylime-extra/2016Q4/x86_64/py35-gevent-1.2.1.tgz
 py35-msgpack
-py35-pymysql
+http://pkgsrc.smartos.skylime.net/skylime-extra/2016Q4/x86_64/py35-percona56client.tgz
 #py35-percona56db
 # ftp
 proftpd
