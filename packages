@@ -39,6 +39,7 @@ nginx
 apache
 phpmyadmin
 # python
+py35-future
 py35-cryptography
 py35-gunicorn
 py35-pip
