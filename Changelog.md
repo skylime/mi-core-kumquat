@@ -1,5 +1,18 @@
 # Changelog
 
+## 16.4.0
+
+### New
+
+* Update to newest kumquat version which includes python3 support. [Thomas Merkel]
+* Remove nginx and use only apache as default webserver. [Thomas Merkel]
+
+### Other
+
+* Fix additional python issues with Kumquat. [Thomas Merkel]
+* Add py35-future and switch to newest core-base release. [Thomas Merkel]
+* Use py35-percona56client as mysql connector for kumquat and django. [Thomas Merkel]
+
 ## 16.2.0
 
 ### New

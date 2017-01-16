@@ -30,23 +30,23 @@ php56-dom
 php56-zip
 php56-ftp
 # sql
-percona-server-5.6.31
-percona-client-5.6.31
+percona-server-5.6.34
+percona-client-5.6.34
 # web
-nginx
 apache
-http://pkgsrc.smartos.skylime.net/packages/SmartOS/2016Q1/i386/All/phpmyadmin-4.3.12.tgz
+phpmyadmin
 # python
-py27-gunicorn
-py27-pip
-py27-passlib
-py27-OpenSSL
-py27-SSLCrypto
-py27-expat
-py27-zmq
-py27-gevent
-py27-msgpack
-py27-percona56db
+py35-future
+py35-cryptography
+py35-gunicorn
+py35-pip
+py35-passlib
+py35-OpenSSL
+py35-expat
+py35-zmq
+http://pkgsrc.smartos.skylime.net/skylime-extra/2016Q4/i386/py35-gevent-1.2.1.tgz
+py35-msgpack
+http://pkgsrc.smartos.skylime.net/skylime-extra/2016Q4/i386/py35-percona56client.tgz
 # ftp
 proftpd
 proftpd-percona56

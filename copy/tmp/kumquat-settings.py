@@ -141,10 +141,14 @@ LETSENCRYPT_TOS          = 'https://letsencrypt.org/documents/LE-SA-v1.1.1-Augus
 LETSENCRYPT_ACME_SERVER  = 'https://acme-v01.api.letsencrypt.org/directory'
 LETSENCRYPT_ACME_FOLDER  = '/var/letsencrypt/acme/.well-known/acme-challenge/'
 LETSENCRYPT_STATE_FOLDER = '/var/letsencrypt/state/'
+# without 0rpc the management jobs will have to be called by a cronjob
+# some features (like snapshots) will not be available
+KUMQUAT_USE_0RPC         = True
 
 # Allow the following variables in the template
 SETTINGS_EXPORT = [
 	'KUMQUAT_WEBMAIL_URL',
 	'KUMQUAT_PHPMYADMIN_URL',
 	'KUMQUAT_USE_ZFS',
+	'KUMQUAT_USE_0RPC',
 ]
