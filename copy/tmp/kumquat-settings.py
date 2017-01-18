@@ -143,7 +143,7 @@ LETSENCRYPT_ACME_FOLDER  = '/var/letsencrypt/acme/.well-known/acme-challenge/'
 LETSENCRYPT_STATE_FOLDER = '/var/letsencrypt/state/'
 # without 0rpc the management jobs will have to be called by a cronjob
 # some features (like snapshots) will not be available
-KUMQUAT_USE_0RPC         = True
+KUMQUAT_USE_0RPC         = False
 
 # Allow the following variables in the template
 SETTINGS_EXPORT = [

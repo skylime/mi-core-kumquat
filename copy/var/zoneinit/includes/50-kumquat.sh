@@ -120,12 +120,11 @@ fi
 (cd /opt/kumquat/; ./manage.py update_vhosts)
 
 # Create cronjobs for kumquat
-CRON="0 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
+CRON="0,5,10,15,20,25,30,35,40,45,55 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
 0,15,30,45 * * * * (cd /opt/kumquat/; ./manage.py delete_vhosts)
 1,11,21,31,41,51 * * * * (cd /opt/kumquat; ./manage.py update_cronjobs)
 0,5,10,15,20,25,30,35,40,45,55 * * * * (su letsencrypt -c 'cd /opt/kumquat; ./manage.py letsencrypt')"
 (crontab -l 2>/dev/null || true; echo "$CRON" ) | sort | uniq | crontab
 
-# Enable gunicorn and kumquat backend
-svcadm enable svc:/application/kumquat:backend
+# Enable gunicorn
 svcadm enable svc:/network/gunicorn:kumquat
