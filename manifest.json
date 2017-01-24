@@ -5,12 +5,11 @@
 	"organization": "SkyLime",
 	"brand":        "Instance",
 	"homepage":     "https://github.com/skylime/mi-core-kumquat",
-	"base":         "d5b95266-4a0c-4404-ba74-d1a293d8704f",
+	"base":         "c78fc8a9-6782-44f5-82a2-da4a3dfbc956",
 	"customer_metadata": {
 		"root_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
 		"root_ssh_rsa":         {"type": "text", "description": "private SSH rsa key for root user"},
 		"root_ssh_rsa_pub":     {"type": "text", "description": "public SSH rsa key for root user (mostly not required)"},
-		"syslog_host":          {"type": "text", "description": "syslog server IP address and port seperated by colon"},
 		"mail_smarthost":       {"type": "text", "description": "hostname of remote smtp server"},
 		"mail_auth_user":       {"type": "text", "description": "smtp username if authentication is required"},
 		"mail_auth_pass":       {"type": "text", "description": "smtp password"},
