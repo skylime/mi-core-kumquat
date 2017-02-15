@@ -2,7 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-KUMQUAT_VERSION='0.1.40'
+KUMQUAT_VERSION='0.1.41'
 IONCUBE_VERSION='solaris-i386-6.0.8'
 PHP_VERSION='5.6'
 

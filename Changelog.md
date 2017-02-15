@@ -1,6 +1,6 @@
 # Changelog
 
-## 16.4.0
+## 16.4.1
 
 ### New
 
@@ -12,6 +12,7 @@
 * Fix additional python issues with Kumquat. [Thomas Merkel]
 * Add py35-future and switch to newest core-base release. [Thomas Merkel]
 * Use py35-percona56client as mysql connector for kumquat and django. [Thomas Merkel]
+* Php extensions are loaded automatically via pkg install. [Thomas Merkel]
 
 ## 16.2.0
 
