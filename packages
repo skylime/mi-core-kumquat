@@ -36,6 +36,7 @@ percona-server-5.6.34
 percona-client-5.6.34
 # web
 apache
+ap24-usdt
 phpmyadmin
 # python
 py35-future
