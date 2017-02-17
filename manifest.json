@@ -5,7 +5,7 @@
 	"organization": "SkyLime",
 	"brand":        "Instance",
 	"homepage":     "https://github.com/skylime/mi-core-kumquat",
-	"base":         "c78fc8a9-6782-44f5-82a2-da4a3dfbc956",
+	"base":         "46b7ed55-0556-4027-9fcf-1b77d7b03b43",
 	"customer_metadata": {
 		"root_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
 		"root_ssh_rsa":         {"type": "text", "description": "private SSH rsa key for root user"},
