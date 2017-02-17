@@ -1,5 +1,17 @@
 # Changelog
 
+## 16.4.2
+
+### New
+
+* Enable opcache by default. [Thomas Merkel]
+* Enable Apache usdt by default for dtrace usage. [Thomas Merkel]
+
+### Other
+
+* Update to newest core-base image. [Thomas Merkel]
+* Use pip version 3.5. [Thomas Merkel]
+
 ## 16.4.1
 
 ### New
