@@ -21,6 +21,7 @@
 		"munin_master_allow":   {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
 		"kumquat_ssl":          {"type": "text", "description": "ssl certificate for kumquat web interface"},
 		"kumquat_admin":        {"type": "text", "description": "admin password for kumquat interface"},
+		"kumquat_admin_email":  {"type": "text", "description": "admin email for kumquat interface"},
 		"core_mail_token":      {"type": "text", "description": "mail export token from kumquat"},
 		"core_mail_whitelist":  {"type": "text", "description": "mail whitelist for all accounts"},
 		"mysql_pw":             {"type": "text", "description": "mysql root password"},
