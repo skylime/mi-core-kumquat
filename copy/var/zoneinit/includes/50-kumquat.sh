@@ -111,9 +111,11 @@ fi
 /opt/kumquat/manage.py migrate --noinput --fake-initial
 
 # Create superadmin user
-KUMQUAT_ADMIN_EMAIL=$(mdata-get mail_adminaddr 1>/dev/null 2>&1)
+KUMQUAT_ADMIN_EMAIL=''
 if mdata-get kumquat_admin_email 1>/dev/null 2>&1; then
 	KUMQUAT_ADMIN_EMAIL=$(mdata-get kumquat_admin_email)
+elif mdata-get mail_adminaddr 1>/dev/null 2>&1; then
+	KUMQUAT_ADMIN_EMAIL=$(mdata-get mail_adminaddr)
 fi
 
 if [[ ${DB_CREATED} == true ]]; then
