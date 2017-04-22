@@ -101,6 +101,7 @@ useradd -c "Lets Encrypt SSL certificate service" -b /var -g kumquat -m letsencr
 echo "* Create Let's Encrypt folders"
 mkdir -p /var/letsencrypt/state/
 mkdir -p /var/letsencrypt/acme/.well-known/acme-challenge/
+touch /var/letsencrypt/acme/.well-known/acme-challenge/.keep
 
 echo "* update Let's Encrypt HOME permissions"
 chmod -R 700 /var/letsencrypt/state/
