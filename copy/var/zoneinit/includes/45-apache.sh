@@ -1,1 +1,0 @@
-/usr/sbin/svcadm enable svc:/pkgsrc/apache:default

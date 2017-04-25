@@ -35,11 +35,6 @@ BACK_LOG=64
 [[ ${MEMCAP} -gt 3000 ]] && MAX_CONNECTIONS=2000
 [[ ${MEMCAP} -gt 5000 ]] && MAX_CONNECTIONS=5000
 
-# table_cache
-TABLE_CACHE=$((${MEMCAP}/4))
-[[ ${TABLE_CACHE} -lt 256 ]] && TABLE_CACHE=256
-[[ ${TABLE_CACHE} -gt 512 ]] && TABLE_CACHE=512
-
 # thread_cache_size
 THREAD_CACHE_SIZE=$((${MAX_CONNECTIONS}/2))
 [[ ${THREAD_CACHE_SIZE} -gt 1000 ]] && THREAD_CACHE_SIZE=1000
@@ -47,7 +42,6 @@ THREAD_CACHE_SIZE=$((${MAX_CONNECTIONS}/2))
 log "tuning MySQL configuration"
 gsed -i \
 	-e "s/back_log = [0-9]*/back_log = ${BACK_LOG}/" \
-	-e "s/table_open_cache = [0-9]*/table_open_cache = ${TABLE_CACHE}/" \
 	-e "s/thread_cache_size = [0-9]*/thread_cache_size = ${THREAD_CACHE_SIZE}/" \
 	-e "s/max_connections = [0-9]*/max_connections = ${MAX_CONNECTIONS}/" \
 	-e "s/innodb_buffer_pool_size = [0-9]*M/innodb_buffer_pool_size = ${INNODB_BUFFER_POOL_SIZE}/" \

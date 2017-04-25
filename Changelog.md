@@ -1,5 +1,22 @@
 # Changelog
 
+## 16.4.3
+
+### New
+
+* Kumquat version bump which supports IDN Subdomains. [Thomas Merkel]
+* Provide Let&#x27;s Encrypt support for Kumquat admin UI. [Thomas Merkel]
+* New mdata-variable kumquat_admin_email. [Thomas Merkel]
+
+  The new option allow you to configure an admin email address for the kumquat user and the return path for PHP sendmail usage.
+
+### Fix
+
+* Fix percona version and update to core-base. [Thomas Merkel]
+* Switching to default table_open_cache. [Thomas Merkel]
+
+  https://mariadb.com/kb/en/mariadb/optimizing-table_open_cache/
+
 ## 16.4.2
 
 ### New
