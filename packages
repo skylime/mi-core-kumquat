@@ -46,9 +46,9 @@ py35-passlib
 py35-OpenSSL
 py35-expat
 py35-zmq
-http://pkgsrc.smartos.skylime.net/skylime-extra/2016Q4/i386/py35-gevent-1.2.1.tgz
+http://pkgsrc.smartos.skylime.net/skylime-extra/2017Q1/i386/py35-gevent-1.2.1.tgz
 py35-msgpack
-http://pkgsrc.smartos.skylime.net/skylime-extra/2016Q4/i386/py35-percona56client.tgz
+http://pkgsrc.smartos.skylime.net/skylime-extra/2017Q1/i386/py35-percona56client.tgz
 # ftp
 proftpd
 proftpd-percona56
