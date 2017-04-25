@@ -1,5 +1,17 @@
 # Changelog
 
+## 17.1.0
+
+### New
+
+* Update to core-base 17.1.0 release. [Thomas Merkel]
+* Update packages for 2017Q1. [Thomas Merkel]
+
+### Fix
+
+* We should keep the acme-challenge folder also if certbot is running. [Thomas Merkel]
+* Fix kumquat_admin_email. [Thomas Merkel]
+
 ## 16.4.3
 
 ### New
