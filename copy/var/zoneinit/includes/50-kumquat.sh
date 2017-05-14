@@ -1,5 +1,6 @@
 #!/bin/bash
 ## Setup kumquat configuration
+start=`date +%s`
 
 UUID=$(mdata-get sdc:uuid)
 DDS=zones/${UUID}/data
@@ -136,3 +137,6 @@ CRON="0 * * * * (cd /opt/kumquat/; ./manage.py update_vhosts)
 # Enable gunicorn and kumquat backend
 svcadm enable svc:/application/kumquat:backend
 svcadm enable svc:/network/gunicorn:kumquat
+
+end=`date +%s`
+log "debug (sec): $((end-start))"

@@ -1,4 +1,6 @@
 # Get password from metadata, unless passed as MYSQL_PW, or set one.
+start=`date +%s`
+
 log "getting mysql_pw"
 MYSQL_PW=${MYSQL_PW:-$(mdata-get mysql_pw 2>/dev/null)} || \
 MYSQL_PW=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
@@ -93,3 +95,6 @@ host = localhost
 user = root
 password = ${MYSQL_PW}
 EOF
+
+end=`date +%s`
+log "debug (sec): $((end-start))"

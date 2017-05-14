@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+start=`date +%s`
 
 # Configure PHP sendmail return-path if possible
 if mdata-get kumquat_admin_email 1>/dev/null 2>&1; then
@@ -8,3 +9,6 @@ fi
 
 # Enable PHP-FPM
 /usr/sbin/svcadm enable svc:/pkgsrc/php-fpm:default
+
+end=`date +%s`
+log "debug (sec): $((end-start))"

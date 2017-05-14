@@ -2,6 +2,7 @@
 # use the mdata variable if provided, if it does not exists we will
 # try to get a certificate from the Let's Encrypt API.
 # As fallback the self-signed certificate is used from 45-ssl-selfsigned.sh
+start=`date +%s`
 
 # Default
 SSL_HOME='/opt/local/etc/httpd/ssl/'
@@ -33,3 +34,6 @@ fi
 
 # Always run a restart of the webserver
 svcadm restart svc:/pkgsrc/apache:default
+
+end=`date +%s`
+log "debug (sec): $((end-start))"

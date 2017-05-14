@@ -1,4 +1,6 @@
 # Modify proftpd configuration file
+start=`date +%s`
+
 WWW_UID=$(id -u www)
 WWW_GID=$(id -g www)
 MYSQL_KUMQUAT=$(mdata-get mysql_kumquat_pw)
@@ -13,3 +15,6 @@ logadm -w /var/log/proftpd/xferlog -p 1d -C 10 -N -m 640 -c
 
 # Enable proftpd service
 /usr/sbin/svcadm enable svc:/pkgsrc/proftpd:default
+
+end=`date +%s`
+log "debug (sec): $((end-start))"

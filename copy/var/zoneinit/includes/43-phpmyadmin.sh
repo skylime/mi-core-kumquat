@@ -1,4 +1,5 @@
 # Modify phpMyAdmin configuration file and kumquat menu
+start=`date +%s`
 
 # Create blowfish secret for phpMyAdmin
 GEN_BLOWFISH_SECRET=$(od -An -N8 -x /dev/random | head -1 | sed 's/^[ \t]*//' | tr -d ' ')
@@ -15,3 +16,6 @@ else
 	/opt/local/bin/sed -i -e 's:PHPMYADMIN_ALLOW_FROM:all:g' \
 		/opt/local/etc/httpd/vhosts/01-kumquat.conf
 fi
+
+end=`date +%s`
+log "debug (sec): $((end-start))"

@@ -1,4 +1,6 @@
 #!/bin/bash
+start=`date +%s`
+
 UUID=$(mdata-get sdc:uuid)
 DDS=zones/${UUID}/data
 
@@ -19,3 +21,6 @@ znapzendzetup create --recursive --tsformat='%Y-%m-%d-%H%M%S' --donotask \
 znapzendzetup create --recursive --tsformat='%Y-%m-%d-%H%M%S' --donotask \
 	SRC '7day=>8hour,30day=>1day,1year=>1week,10year=>1month' ${DDS}/mysql
 /usr/sbin/svcadm enable svc:/pkgsrc/znapzend:default
+
+end=`date +%s`
+log "debug (sec): $((end-start))"
