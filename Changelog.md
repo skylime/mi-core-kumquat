@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.1.2
+
+### Fix
+
+- Missing / for kumquat redirect. [Thomas Merkel]
+
 ## 17.1.1
 
 ### Fix
