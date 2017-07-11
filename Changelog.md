@@ -1,5 +1,19 @@
 # Changelog
 
+## 17.1.1
+
+### Fix
+
+- Redirect Kumquat admin interface to HTTPS. [Thomas Merkel]
+- Fix SSL certificate (if we use Let's Encrypt) for ProFTPd. [Thomas
+  Merkel]
+
+### Change
+
+- verify if zfs mountpoint is already configured
+- switch snapshot config to 2day=>8hour,14day=>1day,1year=>1month,10year=>1year
+- use znapzend only if delegate dataset is used
+
 ## 17.1.0
 
 ### New
