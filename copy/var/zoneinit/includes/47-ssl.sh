@@ -29,6 +29,7 @@ elif /opt/core/bin/ssl-letsencrypt.sh -t webroot 1>/dev/null; then
 	# Update renew-hook.sh
 	echo '#!/usr/bin/env bash' > ${LE_HOME}renew-hook.sh
 	echo 'svcadm restart svc:/pkgsrc/apache:default' >> ${LE_HOME}renew-hook.sh
+	echo 'svcadm restart svc:/pkgsrc/proftpd:default' >> ${LE_HOME}renew-hook.sh
 	# Remove unused self-signed if available
 	rm -f ${SSL_HOME}/kumquat.csr ${SSL_HOME}/kumquat.pem
 fi
