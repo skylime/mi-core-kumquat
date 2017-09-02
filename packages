@@ -1,6 +1,8 @@
 # List packages to add to your image one per line.
 # tools
 gsed
+# Own nghttp2 version with python3 dependency (required by php56-curl + curl, apache)
+https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/nghttp2-1.23.1nb1.tgz
 # php
 php56-fpm
 php56-pdo
@@ -28,17 +30,17 @@ php56-exif
 php56-curl
 php56-bz2
 php56-bcmath
-php56-dom
 php56-zip
 php56-ftp
 php56-opcache
+php56-imap
 # sql
-percona-server-5.6.35
-percona-client-5.6.35
+percona-server-5.6.36
+percona-client-5.6.36
 # web
 apache
 ap24-usdt
-phpmyadmin
+https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/phpmyadmin-4.7.3.tgz
 # python
 py35-future
 py35-cryptography
@@ -48,11 +50,10 @@ py35-passlib
 py35-OpenSSL
 py35-expat
 py35-zmq
-http://pkgsrc.smartos.skylime.net/skylime-extra/2017Q1/x86_64/py35-gevent-1.2.1.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/libcares-1.13.0.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/py35-gevent-1.2.2.tgz
 py35-msgpack
-http://pkgsrc.smartos.skylime.net/skylime-extra/2017Q1/x86_64/py35-percona56client.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/py35-percona56client-1.3.10.tgz
 # ftp
 proftpd
 proftpd-percona56
-# backup
-znapzend
