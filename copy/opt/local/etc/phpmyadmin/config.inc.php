@@ -19,5 +19,6 @@ $cfg['SaveDir'] = '';
 $cfg['ForceSSL'] = true;
 $cfg['UserprefsDisallow'] = array('ServerLibraryDifference_DisableWarning', 'PmaNoRelation_DisableWarning', 'SuhosinDisableWarning', 'VersionCheck');
 $cfg['VersionCheck'] = false;
+$cfg['PmaNoRelation_DisableWarning'] = true;
 
 ?>
