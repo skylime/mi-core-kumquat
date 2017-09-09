@@ -1,5 +1,22 @@
 # Changelog
 
+## 17.2.0
+
+### New
+
+- Enable SSL Proxy for Apache. [Thomas Merkel]
+- Enable Apache2 Expire Module. [Thomas Merkel]
+- Switch to new core-base 17.2.1. [Thomas Merkel]
+
+### Fix
+
+- Remove self-signed ssl cert if we switch to let's encrypt. [Thomas
+  Merkel]
+- Remove phpMyAdmin warnings. [Thomas Merkel]
+- Add more secure / longer blowfish secret. [Thomas Merkel]
+- Restart ProFTPd after SSL certificate change with Lets Encrypt.
+  [Thomas Merkel]
+
 ## 17.1.2
 
 ### Fix
