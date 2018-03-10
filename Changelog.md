@@ -1,5 +1,17 @@
 # Changelog
 
+## 17.4.0
+
+### New
+
+- Version bump to 17Q4. [Thomas Merkel]
+
+### Fix
+
+- Add latest TOS for Lets Encrypt. [Thomas Merkel]
+- Run znapzendzetup only once for the delegate dataset but recursive.
+  [Thomas Merkel]
+
 ## 17.2.0
 
 ### New
