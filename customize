@@ -21,8 +21,8 @@ MUNIN_PLUGINS="
 # Exit if any commands fail
 set -o errexit
 
-echo "* Use default python 3.5"
-pkg_alternatives manual python35
+echo "* Use default python 3.6"
+pkg_alternatives manual python36
 
 echo "* Configuring image specific packages."
 mkdir -p /opt/kumquat
@@ -38,8 +38,9 @@ echo "* Setup permissions for kumquat folder"
 chown -R kumquat:www /opt/kumquat
 
 echo "* Install missing dependencies via pip"
-pip3.5 install Django==1.10.4 django-annoying==0.10.3 django-bootstrap3==7.1.0 django-messagegroups==0.4.5 django-settings-export==1.2.1 free-tls-certificates==0.1.6 passlib==1.7.0
-pip3.5 install --no-deps zerorpc==0.6.0
+pip3.6 install Django==1.10.4 django-annoying==0.10.3 django-bootstrap3==7.1.0 django-messagegroups==0.4.5 django-settings-export==1.2.1 passlib==1.7.0
+pip3.6 install --no-deps zerorpc==0.6.0
+pip3.6 install https://github.com/drscream/free_tls_certificates/archive/0.1.7.zip
 
 echo "* Create extra ssl folder for kumquat"
 mkdir -p /opt/local/etc/kumquat/ssl
