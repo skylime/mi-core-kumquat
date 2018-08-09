@@ -1,6 +1,4 @@
 # List packages to add to your image one per line.
-# tools
-gsed
 # php
 php56-fpm
 php56-pdo
@@ -40,17 +38,17 @@ apache
 ap24-usdt
 https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/phpmyadmin-4.7.3.tgz
 # python
-py35-future
-py35-cryptography
-py35-gunicorn
-py35-pip
-py35-passlib
-py35-OpenSSL
-py35-expat
-py35-zmq
-py35-gevent
-py35-msgpack
-https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q4/x86_64/py35-percona56client-1.3.12.tgz
+py36-future
+py36-cryptography
+py36-gunicorn
+py36-pip
+py36-passlib
+py36-OpenSSL
+py36-expat
+py36-zmq
+py36-gevent
+py36-msgpack
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q2/x86_64/py36-percona56client-1.3.13.tgz
 # ftp
 proftpd
 proftpd-percona56
