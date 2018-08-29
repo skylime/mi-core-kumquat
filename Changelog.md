@@ -1,5 +1,18 @@
 # Changelog
 
+## 18.2.0
+
+### New
+
+- Version bump of kumquat to 0.1.44. [Thomas Merkel]
+- Version bump to core-base version 18.2.0. [Thomas Merkel]
+
+### Change
+
+- Update packages to py36. [Thomas Merkel]
+- Provide extra logadm rules for all webservices from kumquat service.
+  [Thomas Merkel]
+
 ## 17.4.0
 
 ### New
