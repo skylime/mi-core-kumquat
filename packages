@@ -1,42 +1,40 @@
 # List packages to add to your image one per line.
 # php
-php56-fpm
-php56-pdo
-php56-pdo_mysql
-php56-pdo_sqlite
-php56-zlib
-php56-uploadprogress
-php56-soap
-php56-posix
-php56-pear
-php56-pear-Net_SMTP
-php56-pear-Mail_Mime
-php56-pear-HTTP_Request
-php56-pear-HTTP
-php56-mysqli
-php56-mysql
-php56-mcrypt
-php56-mbstring
-php56-json
-php56-intl
-php56-imagick
-php56-iconv
-php56-gd
-php56-exif
-php56-curl
-php56-bz2
-php56-bcmath
-php56-zip
-php56-ftp
-php56-opcache
-php56-imap
+php72-fpm
+php72-pdo
+php72-pdo_mysql
+php72-pdo_sqlite
+php72-zlib
+php72-soap
+php72-posix
+php72-pear
+php72-pear-Net_SMTP
+php72-pear-Mail_Mime
+php72-pear-HTTP_Request
+php72-pear-HTTP
+php72-mysqli
+php72-pecl-mcrypt
+php72-mbstring
+php72-json
+php72-intl
+php72-imagick
+php72-iconv
+php72-gd
+php72-exif
+php72-curl
+php72-bz2
+php72-bcmath
+php72-zip
+php72-ftp
+php72-opcache
+php72-imap
 # sql
-percona-server-5.6.39
-percona-client-5.6.39
+percona-server-5.6.41
+percona-client-5.6.41
 # web
 apache
 ap24-usdt
-https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/phpmyadmin-4.7.3.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/phpmyadmin-4.8.3.tgz
 # python
 py36-future
 py36-cryptography
@@ -46,9 +44,9 @@ py36-passlib
 py36-OpenSSL
 py36-expat
 py36-zmq
-py36-gevent
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/py36-gevent-1.3.6.tgz
 py36-msgpack
-https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q2/x86_64/py36-percona56client-1.3.13.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/py36-percona56client-1.3.13.tgz
 # ftp
 proftpd
 proftpd-percona56
