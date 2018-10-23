@@ -31,8 +31,8 @@ php56-ftp
 php56-opcache
 php56-imap
 # sql
-percona-server-5.6.39
-percona-client-5.6.39
+percona-server-5.6.41
+percona-client-5.6.41
 # web
 apache
 ap24-usdt
@@ -46,9 +46,9 @@ py36-passlib
 py36-OpenSSL
 py36-expat
 py36-zmq
-py36-gevent
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/py36-gevent-1.3.6.tgz
 py36-msgpack
-https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q2/x86_64/py36-percona56client-1.3.13.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/py36-percona56client-1.3.13.tgz
 # ftp
 proftpd
 proftpd-percona56
