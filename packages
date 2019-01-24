@@ -34,7 +34,7 @@ percona-client-5.6.41
 # web
 apache
 ap24-usdt
-https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/phpmyadmin-4.8.3.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/php72-phpmyadmin-4.8.4.tgz
 # python
 py36-future
 py36-cryptography
