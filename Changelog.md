@@ -1,5 +1,20 @@
 # Changelog
 
+## 18.3.0
+
+### New
+
+- Feature #3, add tuning options for opcache (based on PHP7 defaults)
+  [Thomas Merkel]
+- Move znapzendzetup tool to postinit service. [Thomas Merkel]
+- Kumquat WebUI version bump to 0.1.46. [Thomas Merkel]
+
+### Changes
+
+- Version bump to latest mi-core-base image 18.3.0. [Thomas Merkel]
+- Switch to default php-fpm.d folder. [Thomas Merkel]
+- Switch default PHP version 5.6 to 7.2. [Thomas Merkel]
+
 ## 18.2.0
 
 ### New
