@@ -1,5 +1,5 @@
 {
-	"name":         "core-kumquat",
+	"name":         "core-kumquat-php5",
 	"version":      "18.4.0",
 	"description":  "Standalone web services zone with apache,php,mysql,ftp and management frontend",
 	"organization": "SkyLime",
