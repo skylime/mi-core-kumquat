@@ -1,5 +1,13 @@
 # Changelog
 
+## 18.4.0
+
+### New
+
+- Version bump to latest Q4 pkgsrc release. [Thomas Merkel]
+- Switch to PHP 7.3. [Thomas Merkel]
+- Switch to Python 3.7. [Thomas Merkel]
+
 ## 18.3.0
 
 ### New
