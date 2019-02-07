@@ -4,8 +4,8 @@ php56-fpm
 php56-pdo
 php56-pdo_mysql
 php56-pdo_sqlite
+php56-mysqli
 php56-zlib
-php56-uploadprogress
 php56-soap
 php56-posix
 php56-pear
@@ -14,12 +14,11 @@ php56-pear-Mail_Mime
 php56-pear-HTTP_Request
 php56-pear-HTTP
 php56-mysqli
-php56-mysql
-php56-mcrypt
+php56-pecl-mcrypt
 php56-mbstring
 php56-json
 php56-intl
-php56-imagick
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q4/x86_64/php56-imagick-3.4.3nb7.tgz
 php56-iconv
 php56-gd
 php56-exif
@@ -32,23 +31,23 @@ php56-opcache
 php56-imap
 # sql
 percona-server-5.6.41
-percona-client-5.6.41
+percona-client-5.6.42
 # web
 apache
 ap24-usdt
-https://pkgsrc.smartos.skylime.net/skylime-extra/2017Q2/x86_64/phpmyadmin-4.7.3.tgz
+php56-phpmyadmin
 # python
-py36-future
-py36-cryptography
-py36-gunicorn
-py36-pip
-py36-passlib
-py36-OpenSSL
-py36-expat
-py36-zmq
-https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/py36-gevent-1.3.6.tgz
-py36-msgpack
-https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q3/x86_64/py36-percona56client-1.3.13.tgz
+py37-future
+py37-cryptography
+py37-gunicorn
+py37-pip
+py37-passlib
+py37-OpenSSL
+py37-expat
+py37-zmq
+py37-gevent
+py37-msgpack
+https://pkgsrc.smartos.skylime.net/skylime-extra/2018Q4/x86_64/py37-percona56client-1.3.13.tgz
 # ftp
 proftpd
 proftpd-percona56
