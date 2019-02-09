@@ -14,7 +14,7 @@ php56-pear-Mail_Mime
 php56-pear-HTTP_Request
 php56-pear-HTTP
 php56-mysqli
-php56-pecl-mcrypt
+php56-mcrypt
 php56-mbstring
 php56-json
 php56-intl
