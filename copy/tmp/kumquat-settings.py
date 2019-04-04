@@ -136,6 +136,9 @@ KUMQUAT_USE_ZFS        = True
 KUMQUAT_WEBMAIL_URL    = ''
 KUMQUAT_PHPMYADMIN_URL = ''
 KUMQUAT_CRONJOB_CMD    = ['sudo', '-u', 'www', 'crontab']
+KUMQUAT_VHOST_POST_CREATE_CMD = None
+KUMQUAT_VHOST_POST_DELETE_CMD = ['/opt/core/bin/kumquat-vhost-post-delete.sh']
+
 # Let's Encrypt
 LETSENCRYPT_TOS          = 'https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf'
 LETSENCRYPT_ACME_SERVER  = 'https://acme-v01.api.letsencrypt.org/directory'
