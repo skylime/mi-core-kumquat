@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # This script checks for an recommended MySQL upgrade and update the /etc/motd
 # with some user information.
+export HOME=/root
 
 if [ -f /var/mysql/mysql_upgrade_info ]; then
 	# mysql_upgrade_info exists, so version check is required
