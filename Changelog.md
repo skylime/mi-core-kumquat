@@ -1,5 +1,17 @@
 # Changelog
 
+## 18.4.1
+
+### New
+
+- Upgrade percona to version 5.7 and include upgrade information scripts for motd. [Thomas Merkel]
+- Cleanup logadm entries after vhost deletion. [Sebastian Wiedenroth]
+
+### Fix
+
+- Fix export HOME information for .my.cnf file. [Thomas Merkel]
+- Fix kumquat_admin_email for php-fpm.d value and path. [Thomas Merkel]
+
 ## 18.4.0
 
 ### New
