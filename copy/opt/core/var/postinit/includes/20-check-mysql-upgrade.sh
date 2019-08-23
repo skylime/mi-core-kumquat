@@ -22,6 +22,6 @@ cat >> /etc/motd <<-EOF
  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
  ┃ Operation task recommended:                                        ┃
  ┃    $ mysql_upgrade && svcadm restart svc:/pkgsrc/percona:default   ┃
- ┃    $ motd-cleanup                                                  ┃
+ ┃    $ /opt/core/bin/motd-cleanup                                    ┃
  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 EOF
