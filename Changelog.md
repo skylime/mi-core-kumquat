@@ -1,5 +1,17 @@
 # Changelog
 
+## 18.4.2
+
+### New
+
+* Kumquat version bump with IDNA support, and lower case fix. [Thomas Merkel]
+* Switch to latest core-base, remove motd-cleanup because of core-base. [Thomas Merkel]
+
+### Fix
+
+* Fix path for motd-cleanup. [Thomas Merkel]
+* Fix MySQL upgrade and installation for latest percona version. [Thomas Merkel]
+
 ## 18.4.1
 
 ### New
