@@ -1,6 +1,6 @@
 {
 	"name":         "core-kumquat",
-	"version":      "18.4.1",
+	"version":      "18.4.2",
 	"description":  "Standalone web services zone with apache,php,mysql,ftp and management frontend",
 	"organization": "SkyLime",
 	"brand":        "Instance",

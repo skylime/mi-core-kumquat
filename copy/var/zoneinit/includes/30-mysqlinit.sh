@@ -1,3 +1,3 @@
 if [ ! -d /var/mysql/mysql ]; then
-	/opt/local/bin/mysql_install_db
+	/opt/local/sbin/mysqld --initialize-insecure --user=mysql
 fi
