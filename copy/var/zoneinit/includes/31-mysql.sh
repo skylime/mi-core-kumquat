@@ -9,7 +9,6 @@ mdata-put mysql_pw "${MYSQL_PW}"
 
 # Default query to lock down access and clean up
 MYSQL_INIT="DELETE from mysql.user WHERE User = 'root';
-DELETE FROM mysql.proxies_priv WHERE Host='base.joyent.us';
 GRANT ALL on *.* to 'root'@'localhost' identified by '${MYSQL_PW}' with grant option;
 GRANT ALL on *.* to 'root'@'${PRIVATE_IP:-${PUBLIC_IP}}' identified by '${MYSQL_PW}' with grant option;
 FLUSH PRIVILEGES;"
@@ -76,6 +75,8 @@ sleep 1
 
 # If you can login without a password you could create a valid user
 if mysqladmin -u root processlist &>/dev/null; then
+	log "import local timezones to SQL server"
+	mysql_tzinfo_to_sql /usr/share/lib/zoneinfo | mysql mysql
 	log "running the access lockdown SQL query"
 	mysql -u root -e "${MYSQL_INIT}" >/dev/null || \
 	  ( log "ERROR MySQL query failed to execute." && exit 31 )
