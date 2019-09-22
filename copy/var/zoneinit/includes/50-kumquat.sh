@@ -3,17 +3,20 @@
 
 UUID=$(mdata-get sdc:uuid)
 DDS=zones/${UUID}/data
-MYSQL_ROOT=$(mdata-get mysql_pw)
-MYSQL_KUMQUAT=${MYSQL_KUMQUAT:-$(mdata-get mysql_kumquat_pw 2>/dev/null)} || \
-MYSQL_KUMQUAT=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
-mdata-put mysql_kumquat_pw "${MYSQL_KUMQUAT}"
+MYSQL_ROOT_PW=$(mdata-get mysql_pw)
+MYSQL_KUMQUAT_PW=$(/opt/core/bin/mdata-create-password.sh -m mysql_kumquat_pw)
 
 ALLOWED_HOST=$(hostname)
 SECRET_KEY=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-100})
 
-ADMIN_KUMQUAT=${ADMIN_KUMQUAT:-$(mdata-get kumquat_admin 2>/dev/null)} || \
-ADMIN_KUMQUAT=$(od -An -N8 -x /dev/random | head -1 | tr -d ' ');
-mdata-put kumquat_admin ${ADMIN_KUMQUAT}
+# Migrate from kumquat_admin to kumquat_admin_initial_pw
+if mdata-get kumquat_admin >/dev/null 2>/dev/null; then
+	mdata-get kumquat_admin | mdata-put kumquat_admin_initial_pw
+	mdata-delete kumquat_admin
+fi
+
+KUMQUAT_ADMIN_INITIAL_PW=$(/opt/core/bin/mdata-create-password.sh -m kumquat_admin_initial_pw)
+KUMQUAT_ROOT_PW=$(/opt/core/bin/mdata-create-password.sh -m kumquat_root_pw)
 
 WWW_UID=$(id -u www)
 WWW_GID=$(id -g www)
@@ -32,7 +35,7 @@ if [[ ! -d /var/mysql/kumquat ]]; then
 	GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'127.0.0.1';
 	FLUSH PRIVILEGES;"
 	
-	mysql --user=root --password=${MYSQL_ROOT} -e "${KUMQUAT_INIT}" >/dev/null || \
+	mysql --user=root --password=${MYSQL_ROOT_PW} -e "${KUMQUAT_INIT}" >/dev/null || \
 	  ( log "ERROR MySQL query failed to execute." && exit 31 )
 	DB_CREATED=true
 fi
@@ -81,7 +84,7 @@ DATABASES = {
                 'ENGINE':   'django.db.backends.mysql',
                 'HOST':     'localhost',
                 'USER':     'root',
-                'PASSWORD': "${MYSQL_ROOT}",
+                'PASSWORD': "${MYSQL_ROOT_PW}",
         }
 }
 
@@ -110,18 +113,31 @@ fi
 # Init django data and create admin user
 /opt/kumquat/manage.py migrate --noinput --fake-initial
 
-# Create superadmin user
-KUMQUAT_ADMIN_EMAIL=''
-if mdata-get kumquat_admin_email 1>/dev/null 2>&1; then
-	KUMQUAT_ADMIN_EMAIL=$(mdata-get kumquat_admin_email)
-elif mdata-get mail_adminaddr 1>/dev/null 2>&1; then
-	KUMQUAT_ADMIN_EMAIL=$(mdata-get mail_adminaddr)
+## Lookup correct email address
+KUMQUAT_EMAIL=''
+if mdata-get mail_adminaddr 1>/dev/null 2>&1; then
+	KUMQUAT_EMAIL=$(mdata-get mail_adminaddr)
 fi
+## Create root user (Django SuperAdmin for operator)
+cat <<eof | /opt/kumquat/manage.py shell
+from django.contrib.auth import get_user_model
+user = get_user_model()
+user.objects.filter(username="root").exists() or \
+    user.objects.create_superuser("root", "${KUMQUAT_EMAIL}", "${KUMQUAT_ROOT_PW}")
+eof
 
-if [[ ${DB_CREATED} == true ]]; then
-	echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', '${KUMQUAT_ADMIN_EMAIL}', '${ADMIN_KUMQUAT}')" \
-		| /opt/kumquat/manage.py shell
+## Create admin user (Django SuperAdmin for customer)
+# Overwrite kumquat email address if admin email is available
+if mdata-get kumquat_admin_email 1>/dev/null 2>&1; then
+	KUMQUAT_EMAIL=$(mdata-get kumquat_admin_email)
 fi
+# Create django superuser
+cat <<eof | /opt/kumquat/manage.py shell
+from django.contrib.auth import get_user_model
+user = get_user_model()
+user.objects.filter(username="admin").exists() or \
+    user.objects.create_superuser("admin", "${KUMQUAT_EMAIL}", "${KUMQUAT_ADMIN_INITIAL_PW}")
+eof
 
 # Run update_vhosts once
 (cd /opt/kumquat/; ./manage.py update_vhosts)
