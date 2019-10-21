@@ -43,6 +43,8 @@ gsed -i \
 	-e "s/#query_cache_size = 16M/query_cache_size = 16M/" \
 	-e "s/#query_cache_strip_comments/query_cache_strip_comments/" \
 	-e "s/query_cache_type = 0/query_cache_type = 1/" \
+	-e 's/binlog_format\(.*\)/#binlog_format\1/g' \
+	-e 's/log-bin = \(.*\)/#log-bin = \1/g' \
 	/opt/local/etc/my.cnf
 
 log "shutting down an existing instance of MySQL"
