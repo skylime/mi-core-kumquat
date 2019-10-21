@@ -29,8 +29,8 @@ mdata-put core_mail_token ${CORE_MAIL_TOKEN}
 if [[ ! -d /var/mysql/kumquat ]]; then
 	# create kumquat mysql database, user and privileges
 	KUMQUAT_INIT="CREATE DATABASE IF NOT EXISTS kumquat;
-	CREATE USER 'kumquat'@'localhost' IDENTIFIED BY '${MYSQL_KUMQUAT}';
-	CREATE USER 'kumquat'@'127.0.0.1' IDENTIFIED BY '${MYSQL_KUMQUAT}';
+	CREATE USER 'kumquat'@'localhost' IDENTIFIED BY '${MYSQL_KUMQUAT_PW}';
+	CREATE USER 'kumquat'@'127.0.0.1' IDENTIFIED BY '${MYSQL_KUMQUAT_PW}';
 	GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'localhost';
 	GRANT ALL PRIVILEGES ON kumquat.* TO 'kumquat'@'127.0.0.1';
 	FLUSH PRIVILEGES;"
@@ -78,7 +78,7 @@ DATABASES = {
                 'NAME':     'kumquat',
                 'HOST':     'localhost',
                 'USER':     'kumquat',
-                'PASSWORD': "${MYSQL_KUMQUAT}",
+                'PASSWORD': "${MYSQL_KUMQUAT_PW}",
         },
         'kumquat_mysql': {
                 'ENGINE':   'django.db.backends.mysql',
