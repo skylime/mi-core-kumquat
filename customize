@@ -2,7 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-KUMQUAT_VERSION='0.1.48'
+KUMQUAT_VERSION='v0.1.51'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
@@ -28,7 +28,7 @@ echo "* Configuring image specific packages."
 mkdir -p /opt/kumquat
 
 echo "* Download and extract kumquat to /opt/kumquat"
-curl -L "https://github.com/wiedi/kumquat/archive/v${KUMQUAT_VERSION}.tar.gz" | gtar xz -C /opt/kumquat --strip-components=1
+curl -L "https://github.com/wiedi/kumquat/archive/${KUMQUAT_VERSION}.tar.gz" | gtar xz -C /opt/kumquat --strip-components=1
 
 echo "* Add kumquat user"
 groupadd kumquat
@@ -38,9 +38,9 @@ echo "* Setup permissions for kumquat folder"
 chown -R kumquat:www /opt/kumquat
 
 echo "* Install missing dependencies via pip"
-pip3.7 install Django==1.10.4 django-annoying==0.10.3 django-bootstrap3==7.1.0 django-messagegroups==0.4.5 django-settings-export==1.2.1 passlib==1.7.0
+gsed -i '/zerorpc==0.6.0/d' /opt/kumquat/req.txt
+pip3.7 install -r /opt/kumquat/req.txt
 pip3.7 install --no-deps zerorpc==0.6.0
-pip3.7 install https://github.com/drscream/free_tls_certificates/archive/0.1.7.zip
 
 echo "* Create extra ssl folder for kumquat"
 mkdir -p /opt/local/etc/kumquat/ssl
@@ -84,10 +84,6 @@ rm -rf /opt/local/share/phpmyadmin/setup
 echo "* Copy default index.html"
 cp /tmp/default-index.html /opt/local/share/httpd/htdocs/index.html
 rm /tmp/default-index.html
-
-echo "* Copy default (basic) kumquat settings"
-cp /tmp/kumquat-settings.py /opt/kumquat/kumquat_web/settings.py
-rm /tmp/kumquat-settings.py
 
 echo "* Copy default proftpd configuration"
 cp /tmp/proftpd.conf /opt/local/etc/proftpd.conf

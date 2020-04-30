@@ -64,6 +64,9 @@ if mdata-get webmail_url 1>/dev/null 2>&1; then
 fi
 
 cat >> /opt/kumquat/kumquat_web/settings.py <<EOF
+##
+## core-kumquat overwrite
+##
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "${SECRET_KEY}"
 
@@ -88,18 +91,25 @@ DATABASES = {
         }
 }
 
+# LE
+LETSENCRYPT_ACME_FOLDER  = '/var/letsencrypt/acme/.well-known/acme-challenge/'
+LETSENCRYPT_STATE_FOLDER = '/var/letsencrypt/state/'
+
 # Kumquat
+KUMQUAT_SITE_NAME        = "${ALLOWED_HOST}"
 KUMQUAT_CERT_PATH        = '/opt/local/etc/kumquat/ssl/'
 KUMQUAT_VHOST_CONFIG     = '/opt/local/etc/httpd/vhosts/vhosts.conf'
 KUMQUAT_VHOST_ROOT       = '/var/www/'
-KUMQUAT_VHOST_ERROR_LOG  = '/var/www/{vhost}/logs/error.log'
-KUMQUAT_VHOST_UID        = ${WWW_UID}
-KUMQUAT_VHOST_GID        = ${WWW_GID}
+KUMQUAT_VHOST_ERROR_LOG       = '/var/www/{vhost}/logs/error.log'
+KUMQUAT_VHOST_UID             = ${WWW_UID}
+KUMQUAT_VHOST_GID             = ${WWW_GID}
+KUMQUAT_VHOST_POST_DELETE_CMD = ['/opt/core/bin/kumquat-vhost-post-delete.sh']
 KUMQUAT_USE_ZFS          = ${USE_ZFS}
 KUMQUAT_VHOST_DATASET    = "${VHOST_DATASET}"
 KUMQUAT_WEBSERVER_RELOAD = 'svcadm refresh apache'
 KUMQUAT_PHPMYADMIN_URL   = "${KUMQUAT_PHPMYADMIN_URL}"
 KUMQUAT_WEBMAIL_URL      = "${KUMQUAT_WEBMAIL_URL}"
+KUMQUAT_CRONJOB_CMD      = ['sudo', '-u', 'www', 'crontab']
 CORE_MAIL_TOKEN          = "${CORE_MAIL_TOKEN}"
 EOF
 
