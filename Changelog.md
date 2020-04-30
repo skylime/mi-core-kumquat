@@ -1,5 +1,27 @@
 # Changelog
 
+## 20.1.0
+
+### New
+
+* Kumquat version bump to v0.1.52. [Thomas Merkel]
+
+  * Support for Let's Encrypt ACMEv2 protocol
+  * Title and sitename set by hostname
+  * Additional php modules for calendar support
+  * JavaScript password generator
+  * Confirm dialog updates
+
+* Add SQLite3 for PHP73. [Thomas Merkel]
+* Switch from kumquat_admin to some initialized password, create extra root user for operations. [Thomas Merkel]
+* Add script and support to allow admin user to switch to www, via script. [Thomas Merkel]
+
+### Fix
+
+* Disable binary logs for MySQL. [Thomas Merkel]
+* Fix kumquat MySQL permissions. [Thomas Merkel]
+* Import local timezone to MySQL. [Thomas Merkel]
+
 ## 18.4.2
 
 ### New
