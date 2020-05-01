@@ -1,5 +1,11 @@
 # Changelog
 
+## 20.1.1
+
+### Fix
+
+* Let's Encrypt fix for Kumquat renewal [Thomas Merkel]
+
 ## 20.1.0
 
 ### New
