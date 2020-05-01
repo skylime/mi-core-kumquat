@@ -92,6 +92,7 @@ DATABASES = {
 }
 
 # LE
+LETSENCRYPT_ACME_SERVER  = 'https://acme-v02.api.letsencrypt.org/directory'
 LETSENCRYPT_ACME_FOLDER  = '/var/letsencrypt/acme/.well-known/acme-challenge/'
 LETSENCRYPT_STATE_FOLDER = '/var/letsencrypt/state/'
 
