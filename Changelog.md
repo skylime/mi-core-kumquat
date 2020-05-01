@@ -1,5 +1,12 @@
 # Changelog
 
+## 20.1.2
+
+### Fix
+
+* Let's Encrypt error handling
+* Let's Encrypt connection to ACME server only by new / renewal certificates
+
 ## 20.1.1
 
 ### Fix
