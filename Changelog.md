@@ -4,6 +4,7 @@
 
 ### Fix
 
+* Add production ACMEv2 server [Thomas Merkel]
 * Let's Encrypt fix for Kumquat renewal [Thomas Merkel]
 
 ## 20.1.0
