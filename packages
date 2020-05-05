@@ -25,7 +25,7 @@ php73-curl
 php73-bz2
 php73-bcmath
 php73-zip
-php73-ftp
+https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q1/x86_64/php73-ftp-7.3.16nb2.tgz
 php73-opcache
 php73-imap
 php73-sqlite3
