@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Simplified switch to www user, as an admin helper script.
+
+cd /var/www; PS1='\w $ ' sudo -u www -s

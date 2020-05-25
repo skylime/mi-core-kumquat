@@ -1,5 +1,65 @@
 # Changelog
 
+## 20.1.2
+
+### Fix
+
+* Let's Encrypt error handling
+* Let's Encrypt connection to ACME server only by new / renewal certificates
+
+## 20.1.1
+
+### Fix
+
+* Add production ACMEv2 server [Thomas Merkel]
+* Let's Encrypt fix for Kumquat renewal [Thomas Merkel]
+
+## 20.1.0
+
+### New
+
+* Kumquat version bump to v0.1.52. [Thomas Merkel]
+
+  * Support for Let's Encrypt ACMEv2 protocol
+  * Title and sitename set by hostname
+  * Additional php modules for calendar support
+  * JavaScript password generator
+  * Confirm dialog updates
+
+* Add SQLite3 for PHP73. [Thomas Merkel]
+* Switch from kumquat_admin to some initialized password, create extra root user for operations. [Thomas Merkel]
+* Add script and support to allow admin user to switch to www, via script. [Thomas Merkel]
+
+### Fix
+
+* Disable binary logs for MySQL. [Thomas Merkel]
+* Fix kumquat MySQL permissions. [Thomas Merkel]
+* Import local timezone to MySQL. [Thomas Merkel]
+
+## 18.4.2
+
+### New
+
+* Kumquat version bump with IDNA support, and lower case fix. [Thomas Merkel]
+* Switch to latest core-base, remove motd-cleanup because of core-base. [Thomas Merkel]
+
+### Fix
+
+* Fix path for motd-cleanup. [Thomas Merkel]
+* Fix MySQL upgrade and installation for latest percona version. [Thomas Merkel]
+
+## 18.4.1
+
+### New
+
+- Upgrade percona to version 5.7 and include upgrade information scripts for motd. [Thomas Merkel]
+- Cleanup logadm entries after vhost deletion. [Sebastian Wiedenroth]
+
+### Fix
+
+- Fix export HOME information for .my.cnf file. [Thomas Merkel]
+- Fix kumquat_admin_email for php-fpm.d value and path. [Thomas Merkel]
+
 ## 18.4.0
 
 ### New

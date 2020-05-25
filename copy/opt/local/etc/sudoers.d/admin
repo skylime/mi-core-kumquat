@@ -1,0 +1,1 @@
+admin ALL=(www) NOPASSWD: SETENV: ALL

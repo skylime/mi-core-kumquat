@@ -9,14 +9,9 @@ mdata-put mysql_pw "${MYSQL_PW}"
 
 # Default query to lock down access and clean up
 MYSQL_INIT="DELETE from mysql.user WHERE User = 'root';
-DELETE FROM mysql.proxies_priv WHERE Host='base.joyent.us';
 GRANT ALL on *.* to 'root'@'localhost' identified by '${MYSQL_PW}' with grant option;
 GRANT ALL on *.* to 'root'@'${PRIVATE_IP:-${PUBLIC_IP}}' identified by '${MYSQL_PW}' with grant option;
-GRANT LOCK TABLES,SELECT,RELOAD,SUPER,REPLICATION CLIENT on *.* to '${QB_US}'@'localhost' identified by '${QB_PW}';
-DROP DATABASE test;
-DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
-FLUSH PRIVILEGES;
-install plugin sphinx soname 'ha_sphinx.so';"
+FLUSH PRIVILEGES;"
 
 # MySQL my.cnf tuning
 MEMCAP=$(kstat -c zone_memory_cap -s physcap -p | cut -f2 | awk '{ printf "%d", $1/1024/1024/3 }');
@@ -48,6 +43,8 @@ gsed -i \
 	-e "s/#query_cache_size = 16M/query_cache_size = 16M/" \
 	-e "s/#query_cache_strip_comments/query_cache_strip_comments/" \
 	-e "s/query_cache_type = 0/query_cache_type = 1/" \
+	-e 's/binlog_format\(.*\)/#binlog_format\1/g' \
+	-e 's/log-bin = \(.*\)/#log-bin = \1/g' \
 	/opt/local/etc/my.cnf
 
 log "shutting down an existing instance of MySQL"
@@ -80,6 +77,8 @@ sleep 1
 
 # If you can login without a password you could create a valid user
 if mysqladmin -u root processlist &>/dev/null; then
+	log "import local timezones to SQL server"
+	mysql_tzinfo_to_sql /usr/share/lib/zoneinfo | mysql mysql
 	log "running the access lockdown SQL query"
 	mysql -u root -e "${MYSQL_INIT}" >/dev/null || \
 	  ( log "ERROR MySQL query failed to execute." && exit 31 )
