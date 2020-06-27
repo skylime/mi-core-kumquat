@@ -70,6 +70,9 @@ cat >> /opt/kumquat/kumquat_web/settings.py <<EOF
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "${SECRET_KEY}"
 
+# Disable Debug mode
+DEBUG = False
+
 # Allow only the hostname and localhost to access
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '${ALLOWED_HOST}']
 
