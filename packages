@@ -25,14 +25,14 @@ php73-curl
 php73-bz2
 php73-bcmath
 php73-zip
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q1/x86_64/php73-ftp-7.3.16nb2.tgz
+php73-ftp
 php73-opcache
 php73-imap
 php73-sqlite3
 php73-calendar
 # sql
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q1/x86_64/percona-client-5.7.24.tgz
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q1/x86_64/percona-server-5.7.24.tgz
+percona-client-5.7.24
+percona-server-5.7.24
 # web
 apache
 ap24-usdt
@@ -48,7 +48,7 @@ py37-expat
 py37-zmq
 py37-gevent
 py37-msgpack
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q1/x86_64/py37-percona57client-1.4.6.tgz
+py37-percona57client
 # ftp
 proftpd
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q1/x86_64/proftpd-percona57-1.3.6.tgz
+proftpd-percona57
