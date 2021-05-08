@@ -5,7 +5,7 @@
 ### New
 
 * Use latest core-base image with pkgsrc 2020Q4. [Thomas Merkel]
-* Switch to Kumquat WebUI v0.1.55 and default python 3.8. [Thomas Merkel]
+* Switch to Kumquat WebUI v0.1.56 and default python 3.8. [Thomas Merkel]
 * Add php package for APCu module. [Thomas Merkel]
 * Provide extra webmaster user to manage www data. [Thomas Merkel]
 
