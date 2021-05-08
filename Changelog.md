@@ -1,5 +1,36 @@
 # Changelog
 
+## 20.4.0
+
+### New
+
+* Use latest core-base image with pkgsrc 2020Q4. [Thomas Merkel]
+* Switch to Kumquat WebUI v0.1.55 and default python 3.8. [Thomas Merkel]
+* Add php package for APCu module. [Thomas Merkel]
+* Provide extra webmaster user to manage www data. [Thomas Merkel]
+
+  Switch back to default admin user which supports "sudo"-permissions to
+  get root privileges. But also add extra webmaster user which use the
+  existing uid and gid of www user.
+
+* Httpd, apache2 enable http/2 by default. [Thomas Merkel]
+
+### Fix
+
+* Switching default timezone for PHP to UTC. [Thomas Merkel]
+
+  As our system uses UTC for all services and operations (including
+  Percona databases) it's required to switch PHP to UTC timezone.
+
+* Hide PHP X-Powered-by header. [Thomas Merkel]
+* Hide ServerToken and Webserver version number from header. [Thomas Merkel]
+* Disable Debug mode for Kumquat. [Thomas Merkel]
+
+### Other
+
+* Add minimal usage documentation for Kumquat image. [Thomas Merkel]
+* Use system packages for py-cryptography and py-mysqlclient. [Thomas Merkel]
+
 ## 20.1.2
 
 ### Fix
