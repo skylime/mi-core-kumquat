@@ -31,6 +31,7 @@ php73-imap
 php73-sqlite3
 php73-calendar
 php73-apcu
+php73-gmp
 # sql
 percona-client-5.7.24
 percona-server-5.7.24
