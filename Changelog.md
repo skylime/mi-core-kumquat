@@ -1,5 +1,16 @@
 # Changelog
 
+## 20.4.1
+
+### New
+
+* Add php73 yaml support. [Thomas Merkel]
+* Add php-gpm module (especially recommended by NextCloud) [Thomas Merkel]
+
+### Fix
+
+* Provide fix for Let's Encrypt bug in Kumquat. [Thomas Merkel]
+
 ## 20.4.0
 
 ### New
