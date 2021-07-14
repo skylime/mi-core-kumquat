@@ -3,7 +3,7 @@
 # Put customizations to your image in this file.
 
 #KUMQUAT_VERSION="refs/heads/master"
-KUMQUAT_VERSION='v0.1.56'
+KUMQUAT_VERSION='v0.1.57'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
