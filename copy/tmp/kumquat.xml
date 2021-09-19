@@ -20,7 +20,6 @@
         <method_credential user='root' group='kumquat' />
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin'/>
-          <envvar name='PYTHONPATH' value='/opt/local/lib/python2.7/site-packages'/>
         </method_environment>
       </method_context>
     </instance>

@@ -19,7 +19,6 @@
       <method_context working_directory='/tmp'>
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin:/bin'/>
-          <envvar name='PYTHONPATH' value='/opt/local/lib/python2.7/site-packages'/>
         </method_environment>
       </method_context>
       <property_group name='config' type='application'>
