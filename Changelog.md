@@ -1,5 +1,52 @@
 # Changelog
 
+## 21.4.0
+
+### New
+
+* Kumquat v0.1.58, pkgsrc / base 2021Q4 Upgrade. [Thomas Merkel]
+* 2021Q4 packages upgrade (mariadb, py39, proftpd) [Thomas Merkel]
+
+  Switch to the latest packages from pkgsrc 2021Q4, especially moving from
+  percona to mariadb and switching from py38 to py39.
+
+* Switch from percona to mariadb. [Thomas Merkel]
+
+  Since pkgsrc 2021Q4 mariadb is the default database for most installed
+  software. For that reason it's required to migrate from percona to
+  mariadb.
+
+* Set pkgsrc PATH to php-fpm. [Thomas Merkel]
+
+  PHP and PHP-FPM should be able to detect pkgsrc binaries for existing
+  web software. Otherwise the PATH need to be modified per PHP application
+  which is not always possible.
+
+* PHP version bump from 7.3 to 7.4. [Thomas Merkel]
+
+  Update to latest stable PHP version 7.4
+
+### Fixes
+
+* Post_max_size should not be smaller than upload_max_filesize. [Thomas Merkel]
+
+  Resize post_max_size to 512 MB
+
+* Only create znapzendzetup when it's not already enabled. [Thomas Merkel]
+
+  `znapzendzetup create` overwrites all old configurations and if we've
+  already configured some remote it should not be created again.
+
+* Remove PYTHONPATH env variable from SMF. [Thomas Merkel]
+* Fixing letsencrypt cronjob timing. [Thomas Merkel]
+
+  Fixing missing :50 in Kumquat Let's Encrypt cronjob.
+
+### Other
+
+* License update for 2022. [Thomas Merkel]
+* Increase max_input_vars (especially for phpMyAdmin) [Thomas Merkel]
+
 ## 20.4.1
 
 ### New
