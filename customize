@@ -2,8 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-#KUMQUAT_VERSION="refs/heads/master"
-KUMQUAT_VERSION='v0.1.57'
+KUMQUAT_VERSION='v0.1.58'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
@@ -22,8 +21,9 @@ MUNIN_PLUGINS="
 # Exit if any commands fail
 set -o errexit
 
-echo "* Use default python 3.8"
-pkg_alternatives manual python38
+echo "* Use default python 3.9"
+pkg_alternatives manual python39
+pkg_alternatives manual py39-pip
 
 echo "* Configuring image specific packages."
 mkdir -p /opt/kumquat
@@ -42,8 +42,8 @@ echo "* Install missing dependencies via pip"
 gsed -i '/zerorpc.*/d'      /opt/kumquat/requirements.txt
 gsed -i '/cryptography.*/d' /opt/kumquat/requirements.txt
 gsed -i '/mysqlclient.*/d'  /opt/kumquat/requirements.txt
-pip3.8 install -r /opt/kumquat/requirements.txt
-pip3.8 install --no-deps zerorpc==0.6.3
+pip install -r /opt/kumquat/requirements.txt
+pip install --no-deps zerorpc==0.6.3
 
 echo "* Create extra ssl folder for kumquat"
 mkdir -p /opt/local/etc/kumquat/ssl
