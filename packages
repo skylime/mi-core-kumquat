@@ -34,24 +34,23 @@ php74-apcu
 php74-gmp
 php74-yaml
 # sql
-percona-client-5.7.24
-percona-server-5.7.24
-# web
+https://pkgsrc.smartos.skylime.net/skylime-extra/2021Q4/x86_64/mariadb-server-10.6.5nb1.tgz
+## web
 apache
 ap24-usdt
 php74-phpmyadmin
-# python
-py38-future
-py38-cryptography
-py38-gunicorn
-py38-pip
-py38-passlib
-py38-OpenSSL
-py38-expat
-py38-zmq
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q4/x86_64/py38-gevent-21.1.2.tgz
-py38-msgpack
-py38-percona57client
-# ftp
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q4/x86_64/proftpd-1.3.6cnb1.tgz
-https://pkgsrc.smartos.skylime.net/skylime-extra/2020Q4/x86_64/proftpd-percona57-1.3.6c.tgz
+## python
+py39-future
+py39-cryptography
+py39-gunicorn
+py39-pip
+py39-passlib
+py39-OpenSSL
+py39-expat
+py39-zmq
+py39-gevent
+py39-msgpack
+py39-mariadb106client
+## ftp
+https://pkgsrc.smartos.skylime.net/skylime-extra/2021Q4/x86_64/proftpd-1.3.7c.tgz
+https://pkgsrc.smartos.skylime.net/skylime-extra/2021Q4/x86_64/proftpd-mariadb106-1.3.7cnb1.tgz
