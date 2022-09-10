@@ -21,7 +21,7 @@ cp /etc/motd /etc/motd.clean
 cat >> /etc/motd <<-EOF
  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
  ┃ Operation task recommended:                                        ┃
- ┃    $ mysql_upgrade && svcadm restart svc:/pkgsrc/percona:default   ┃
+ ┃    $ mysql_upgrade && svcadm restart svc:/pkgsrc/mariadb:default   ┃
  ┃    $ /opt/core/bin/motd-cleanup                                    ┃
  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 EOF

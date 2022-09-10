@@ -14,5 +14,8 @@ if zfs list ${DDS} 1>/dev/null 2>&1; then
 	fi
 fi
 
+# Always try to set the correct permissions for /var/mysql
+chown mariadb:mariadb /var/mysql || true
+
 # create trash folder for removed virtual hosts
 mkdir -p /var/www/.Trash
