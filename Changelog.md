@@ -1,5 +1,11 @@
 # Changelog
 
+## 21.4.1
+
+### New
+
+* MariaDB update to version 10.6.8. [Thomas Merkel]
+
 ## 21.4.0
 
 ### New
