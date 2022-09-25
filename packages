@@ -34,7 +34,7 @@ php74-apcu
 php74-gmp
 php74-yaml
 # sql
-https://pkgsrc.smartos.skylime.net/skylime-extra/2021Q4/x86_64/mariadb-server-10.6.5nb1.tgz
+https://packages.pkgsrc.pub/skylime-extra/SmartOS/2021Q4/x86_64/mariadb-server-10.6.8.tgz
 ## web
 apache
 ap24-usdt
@@ -52,5 +52,5 @@ py39-gevent
 py39-msgpack
 py39-mariadb106client
 ## ftp
-https://pkgsrc.smartos.skylime.net/skylime-extra/2021Q4/x86_64/proftpd-1.3.7c.tgz
-https://pkgsrc.smartos.skylime.net/skylime-extra/2021Q4/x86_64/proftpd-mariadb106-1.3.7cnb1.tgz
+https://packages.pkgsrc.pub/skylime-extra/SmartOS/2021Q4/x86_64/proftpd-1.3.7c.tgz
+https://packages.pkgsrc.pub/skylime-extra/SmartOS/2021Q4/x86_64/proftpd-mariadb106-1.3.7cnb1.tgz
