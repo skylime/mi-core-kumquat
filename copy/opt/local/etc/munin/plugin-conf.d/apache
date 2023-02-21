@@ -1,0 +1,6 @@
+[apache_*]
+env.showfree 0
+
+[apache_processes]
+env.idle80.warning 10:
+env.idle80.critical 5:
