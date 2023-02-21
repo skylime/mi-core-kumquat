@@ -21,9 +21,9 @@ MUNIN_PLUGINS="
 # Exit if any commands fail
 set -o errexit
 
-echo "* Use default python 3.9"
-pkg_alternatives manual python39
-pkg_alternatives manual py39-pip
+echo "* Use default python 3.10"
+pkg_alternatives manual python310
+pkg_alternatives manual py310-pip
 
 echo "* Configuring image specific packages."
 mkdir -p /opt/kumquat
@@ -111,7 +111,7 @@ echo "* Activate munin plugins"
 /opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 echo "* Cleanup home/admin because of delegate dataset usage"
-rm -rf /home/admin/.[^.]*
+rm -rf /home/admin
 
 echo "* Cleaning up"
 rm -rf /root/*
