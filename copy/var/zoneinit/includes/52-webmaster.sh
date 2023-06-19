@@ -4,7 +4,7 @@
 # with a delegate dataset and softfail if it exists.
 
 # Create user
-useradd -m -o -z \
+/opt/core/bin/useradd-zfs -m -o \
 	-u $(id -u www) -g $(id -g www) \
 	-s /usr/bin/bash \
 	webmaster
