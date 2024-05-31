@@ -2,7 +2,7 @@
 #
 # Put customizations to your image in this file.
 
-KUMQUAT_VERSION='v0.1.58'
+KUMQUAT_VERSION='v0.1.59'
 
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
@@ -21,9 +21,9 @@ MUNIN_PLUGINS="
 # Exit if any commands fail
 set -o errexit
 
-echo "* Use default python 3.10"
-pkg_alternatives manual python310
-pkg_alternatives manual py310-pip
+echo "* Use default python 3.11"
+pkg_alternatives manual python311
+pkg_alternatives manual py311-pip
 
 echo "* Configuring image specific packages."
 mkdir -p /opt/kumquat
@@ -39,9 +39,10 @@ echo "* Setup permissions for kumquat folder"
 chown -R kumquat:www /opt/kumquat
 
 echo "* Install missing dependencies via pip"
-gsed -i '/zerorpc.*/d'      /opt/kumquat/requirements.txt
+gsed -i '/acme.*/d' /opt/kumquat/requirements.txt
+gsed -i '/zerorpc.*/d' /opt/kumquat/requirements.txt
 gsed -i '/cryptography.*/d' /opt/kumquat/requirements.txt
-gsed -i '/mysqlclient.*/d'  /opt/kumquat/requirements.txt
+gsed -i '/mysqlclient.*/d' /opt/kumquat/requirements.txt
 pip install -r /opt/kumquat/requirements.txt
 pip install --no-deps zerorpc==0.6.3
 
@@ -69,7 +70,7 @@ httpd-userdir.conf
 httpd-vhosts.conf"
 
 for CONF_RM in ${HTTPD_CONF_RM}; do
-	rm -f /opt/local/etc/httpd/${CONF_RM}
+    rm -f /opt/local/etc/httpd/${CONF_RM}
 done
 
 echo "* Change www user to /var/www for cronjobs"
