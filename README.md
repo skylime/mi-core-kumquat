@@ -2,13 +2,21 @@
 
 This repository is based on [Joyent mibe](https://github.com/joyent/mibe). Please note this repository should be build with the [mi-core-base](https://github.com/skylime/mi-core-base) mibe image.
 
+
+## naming
+
+We create two images based on the different branches for PHP version 7 and latest PHP version 8.
+
+- `core-kumquat7`: with PHP version 7.4 included
+- `core-kumquat`: with latest PHP version included
+
 ## description
 
 This is a standalone webservice / webhosting template. It provides you with
 [kumquat](https://github.com/wiedi/kumquat), an awesome minimal web interface to
 manage domains, vhosts, mysql and ftp accounts.
 
-It install php-fpm with apache, proftpd and for kumquat gunicorn. Percona is
+It install php-fpm with apache, proftpd and for kumquat gunicorn. MariaDB is
 installed for a local mysql server.
 
 ## mdata variables
