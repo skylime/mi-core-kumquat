@@ -1,5 +1,15 @@
 # Changelog
 
+## 24.4.0
+
+### New
+
+* Version bump to 2024Q4 with PHP version 8.3 and MariaDB 11.4. [Thomas Merkel]
+
+  * Switching to Python 3.12
+  * Switching to PHP 8.3
+  * Switching to MariaDB 11.4
+
 ## 23.4.0
 
 ### New
