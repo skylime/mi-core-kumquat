@@ -21,9 +21,9 @@ MUNIN_PLUGINS="
 # Exit if any commands fail
 set -o errexit
 
-echo "* Use default python 3.11"
-pkg_alternatives manual python311
-pkg_alternatives manual py311-pip
+echo "* Use default python 3.12"
+pkg_alternatives manual python312
+pkg_alternatives manual py312-pip
 
 echo "* Configuring image specific packages."
 mkdir -p /opt/kumquat
@@ -43,6 +43,7 @@ gsed -i '/acme.*/d' /opt/kumquat/requirements.txt
 gsed -i '/zerorpc.*/d' /opt/kumquat/requirements.txt
 gsed -i '/cryptography.*/d' /opt/kumquat/requirements.txt
 gsed -i '/mysqlclient.*/d' /opt/kumquat/requirements.txt
+gsed -i '/pyOpenSSL.*/d' /opt/kumquat/requirements.txt
 pip install -r /opt/kumquat/requirements.txt
 pip install --no-deps zerorpc==0.6.3
 
@@ -70,7 +71,7 @@ httpd-userdir.conf
 httpd-vhosts.conf"
 
 for CONF_RM in ${HTTPD_CONF_RM}; do
-    rm -f /opt/local/etc/httpd/${CONF_RM}
+  rm -f /opt/local/etc/httpd/${CONF_RM}
 done
 
 echo "* Change www user to /var/www for cronjobs"
