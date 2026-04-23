@@ -115,6 +115,13 @@ KUMQUAT_PHPMYADMIN_URL   = "${KUMQUAT_PHPMYADMIN_URL}"
 KUMQUAT_WEBMAIL_URL      = "${KUMQUAT_WEBMAIL_URL}"
 KUMQUAT_CRONJOB_CMD      = ['sudo', '-u', 'www', 'crontab']
 CORE_MAIL_TOKEN          = "${CORE_MAIL_TOKEN}"
+
+KUMQUAT_PHP_VERSIONS = {
+	'7.4': '/tmp/php74.sock',
+	'8.2': '/tmp/php82.sock',
+	'8.4': '/tmp/php84.sock',
+}
+KUMQUAT_PHP_DEFAULT_VERSION = '8.4'
 EOF
 
 # valid whitelist values are described at https://mail.core.io/api/

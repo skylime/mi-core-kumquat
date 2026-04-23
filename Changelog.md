@@ -1,5 +1,21 @@
 # Changelog
 
+## 25.4.0
+
+### New
+
+* Version bump to 25.4.0 with multi-PHP support, Python 3.13 and MariaDB 11.8. [Thomas Merkel]
+
+  * Add support for multiple PHP versions simultaneously (7.4, 8.2, 8.4)
+  * Restructure PHP config to per-version directories under /opt/local/etc/php/{version}/
+  * Enable separate php-fpm SMF services per PHP version
+  * Expose available PHP versions and default version to Kumquat settings
+  * Switch to Python 3.13
+  * Switch to MariaDB 11.8 client and ProFTPd MariaDB 11.8 module
+  * Use php84-phpmyadmin as default phpMyAdmin variant
+  * Remove legacy flat PHP config files and outdated kumquat-settings.py template
+  * Remove legacy manifest file in favour of manifest.json only
+
 ## 24.4.0
 
 ### New

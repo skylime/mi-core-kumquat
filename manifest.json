@@ -1,11 +1,11 @@
 {
 	"name":         "core-kumquat",
-	"version":      "24.4.0",
+	"version":      "25.4.0",
 	"description":  "Standalone web services zone with apache,php,mysql,ftp and management frontend",
 	"organization": "SkyLime",
 	"brand":        "Instance",
 	"homepage":     "https://github.com/skylime/mi-core-kumquat",
-	"base":         "8e735415-2575-4c0f-92bc-d6f2f59bdef1",
+	"base":         "e144c16f-4b80-4c11-ac1b-87c816c9f3f2",
 	"customer_metadata": {
 		"admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
 		"root_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
