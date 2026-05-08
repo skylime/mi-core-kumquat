@@ -3,12 +3,15 @@
 This repository is based on [Joyent mibe](https://github.com/joyent/mibe). Please note this repository should be build with the [mi-core-base](https://github.com/skylime/mi-core-base) mibe image.
 
 
-## naming
+## multiple php versions
 
-We create two images based on the different branches for PHP version 7 and latest PHP version 8.
+The latest images (since 25.4.0) contains multiple PHP versions which could
+be easily selected in Kumquat web interface per virtual host. At the moment
+the following versions are supported:
 
-- `core-kumquat7`: with PHP version 7.4 included
-- `core-kumquat`: with latest PHP version included
+- PHP 7.4
+- PHP 8.2
+- PHP 8.4
 
 ## description
 
