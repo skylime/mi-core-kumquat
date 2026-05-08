@@ -1,5 +1,12 @@
 # Changelog
 
+## 25.4.1
+
+### Fix
+
+* Switch to Kumquat v26.5.7.0 which fixes Apache php-fpm file not found handling
+  [Thomas Merkel]
+
 ## 25.4.0
 
 ### New
