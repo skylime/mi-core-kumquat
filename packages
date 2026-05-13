@@ -8,6 +8,7 @@ php82-pdo_mysql
 php82-pdo_sqlite
 php82-zlib
 php82-soap
+php82-sodium
 php82-posix
 php82-pear
 php82-pear-Net_SMTP
@@ -42,6 +43,7 @@ php84-pdo_mysql
 php84-pdo_sqlite
 php84-zlib
 php84-soap
+php84-sodium
 php84-posix
 php84-pear
 php84-pear-Net_SMTP
@@ -76,6 +78,7 @@ php74-pdo_mysql
 php74-pdo_sqlite
 php74-zlib
 php74-soap
+php74-sodium
 php74-posix
 php74-pear
 php74-pear-Net_SMTP
@@ -125,3 +128,5 @@ py313-mariadb118client
 ## ftp
 proftpd
 proftpd-mariadb118
+## development tools
+git
