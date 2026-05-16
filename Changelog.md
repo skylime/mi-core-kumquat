@@ -1,5 +1,17 @@
 # Changelog
 
+## 25.4.2
+
+### Features
+
+- Enable php-sodium and git for development
+- Remove su-www
+- Copy skel files for webmaster user
+
+### Build
+
+- Bump version to 25.4.2
+
 ## 25.4.1
 
 ### Fix
