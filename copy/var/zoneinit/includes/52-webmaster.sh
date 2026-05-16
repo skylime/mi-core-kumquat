@@ -9,6 +9,16 @@
 	-s /usr/bin/bash \
 	webmaster
 
+# Copy skel file if not exists
+find "/etc/skel/".[^.]* -maxdepth 1 | while read -r f; do
+  name="$(basename "$f")"
+  dest="/home/webmaster/$name"
+
+  if [[ ! -e "$dest" ]]; then
+    cp -r "$f" "$dest"
+  fi
+done
+
 # Receive mdata information for ssh public key in .ssh/authorized_keys
 if mdata-get webmaster_authorized_keys 1>/dev/null 2>&1; then
 	home='/home/webmaster'
