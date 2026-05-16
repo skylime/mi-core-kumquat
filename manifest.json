@@ -1,11 +1,11 @@
 {
 	"name":         "core-kumquat",
-	"version":      "25.4.1",
+	"version":      "25.4.2",
 	"description":  "Standalone web services zone with apache,php,mysql,ftp and management frontend",
 	"organization": "SkyLime",
 	"brand":        "Instance",
 	"homepage":     "https://github.com/skylime/mi-core-kumquat",
-	"base":         "e144c16f-4b80-4c11-ac1b-87c816c9f3f2",
+	"base":         "3cbc5b33-427c-4a5d-970f-132977529fca",
 	"customer_metadata": {
 		"admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
 		"root_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
@@ -18,8 +18,6 @@
 		"mail_adminaddr":       {"type": "text", "description": "admin email address alias for all mails to root@localhost"},
 		"ssh_host_rsa_key":     {"type": "text", "description": "private SSH rsa key for the host daemon"},
 		"ssh_host_rsa_key.pub": {"type": "text", "description": "public SSH rsa key for the host daemon"},
-		"ssh_host_dsa_key":     {"type": "text", "description": "private SSH dsa key for the host daemon"},
-		"ssh_host_dsa_key.pub": {"type": "text", "description": "public SSH dsa key for the host daemon"},
 		"munin_master_allow":   {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
 		"kumquat_ssl":          {"type": "text", "description": "ssl certificate for kumquat web interface"},
 		"kumquat_admin":        {"type": "text", "description": "admin password for kumquat interface"},
