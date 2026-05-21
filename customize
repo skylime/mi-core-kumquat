@@ -109,7 +109,7 @@ echo "* Activate munin plugins"
 /opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 echo "* Cleanup home/admin because of delegate dataset usage"
-rm -rf /home/admin
+rm -rf /home/admin/.[^.]*
 
 echo "* Cleaning up"
 rm -rf /root/*

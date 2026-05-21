@@ -1,5 +1,11 @@
 # Changelog
 
+## 25.4.3
+
+### Bug Fixes
+
+- /home/admin file removal during image build [Thomas Merkel]
+
 ## 25.4.2
 
 ### Features
