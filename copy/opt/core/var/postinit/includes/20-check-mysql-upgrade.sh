@@ -13,6 +13,9 @@ if [ -f /var/mysql/mysql_upgrade_info ]; then
     # uprade required.
     exit 0
   fi
+else
+  # No file, no upgrade
+  exit 0
 fi
 
 # mysql_upgrade_info doesn't exists or upgrade information are different to

@@ -117,7 +117,6 @@ KUMQUAT_CRONJOB_CMD      = ['sudo', '-u', 'www', 'crontab']
 CORE_MAIL_TOKEN          = "${CORE_MAIL_TOKEN}"
 
 KUMQUAT_PHP_VERSIONS = {
-	'7.4': '/tmp/php74.sock',
 	'8.2': '/tmp/php82.sock',
 	'8.4': '/tmp/php84.sock',
 }
