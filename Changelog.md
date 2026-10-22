@@ -1,5 +1,19 @@
 # Changelog
 
+## 25.4.4
+
+### Bug Fixes
+
+- Php-fpm config generation [Thomas Merkel]
+- Rotate all php-fpm logfiles [Thomas Merkel]
+- Hotfix PHP versions [Thomas Merkel]
+  * Provide latest php versions 8.4 and 8.2 with the required fixes
+  * Fix mysql upgrade check
+
+### Features
+
+- Auto-generate php-fpm configuration (memory and process usage) [Thomas Merkel]
+
 ## 25.4.3
 
 ### Bug Fixes
