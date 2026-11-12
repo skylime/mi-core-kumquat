@@ -75,7 +75,7 @@ php84-pcntl
 mariadb-server
 mariadb-client
 ## web
-apache
+https://packages.pkgsrc.pub/skylime-extra/SmartOS/2025Q4/x86_64/apache-2.4.71.tgz
 ap24-usdt
 php84-phpmyadmin
 ## python

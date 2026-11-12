@@ -108,6 +108,9 @@ chown -R letsencrypt:kumquat /var/letsencrypt/
 echo "* Activate munin plugins"
 /opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
+echo "* Security package upgrade"
+pkg_add -U https://packages.pkgsrc.pub/skylime-extra/SmartOS/2025Q4/x86_64/brotli-1.2.1.tgz
+
 echo "* Cleanup home/admin because of delegate dataset usage"
 rm -rf /home/admin/.[^.]*
 
