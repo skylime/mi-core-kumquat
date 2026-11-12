@@ -1,5 +1,14 @@
 # Changelog
 
+## 25.4.5
+
+### Bug Fixes
+
+- Shell script is sourced not executed so no exit is allowed [Thomas Merkel]
+- Apache and Brotli security updates [Thomas Merkel]
+  * CVE-2026-111497 Out-of-Bounds Write in Google Brotli Decoder
+  * CVE-2026-119618 RCE vulnerability in Apache HTTP Server
+
 ## 25.4.4
 
 ### Bug Fixes
